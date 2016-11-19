@@ -18,10 +18,22 @@
   "author": "N.Krugol",
   "license": "ISC",
   "devDependencies": {
+    "angular": "^1.5.8",
+    "bower": "^1.8.0",
+    "browserify": "^13.1.1",
+    "browserify-shim": "^3.8.12",
+    "del": "^2.2.2",
     "gulp": "^3.9.0",
     "gulp-concat": "^2.6.1",
-    "gulp-sass": "^2.3.2"
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2",
+    "vinyl-source-stream": "^1.1.0"
   },
+  "browser": {
+    "angular": "./bower_components/angular/angular.min.js",
+    "angular-route": "./bower_components/angular-route/angular-route.min.js"
+  },
+  "browserify-shim": {},
   "bugs": {
     "url": "https://github.com/Kruhgol/alohafriends/issues"
   },

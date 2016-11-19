@@ -2,4 +2,4 @@
 
 var gulp = require('gulp');
 
-module.exports = gulp.task('default', ['clear','styles','watch']);
+module.exports = gulp.task('default', ['clear','styles','browserify','watch']);
