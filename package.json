@@ -1,0 +1,29 @@
+{
+  "name": "alohafriends",
+  "version": "1.0.0",
+  "description": "site about travel my good friends",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kruhgol/alohafriends.git"
+  },
+  "keywords": [
+    "travel",
+    "good",
+    "friends"
+  ],
+  "author": "N.Krugol",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^2.3.2"
+  },
+  "bugs": {
+    "url": "https://github.com/Kruhgol/alohafriends/issues"
+  },
+  "homepage": "https://github.com/Kruhgol/alohafriends#readme"
+}
