@@ -5,4 +5,4 @@ require('angular');
 require('angular-route');
 
 // application initialization
-
+require('./app');
