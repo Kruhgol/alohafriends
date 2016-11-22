@@ -2,4 +2,5 @@
 
 module.exports = angular.module('AlohaFriends.foo',[])
 	.config(require('./routes.js'))
-	.controller('testCtrl', require('./controllers/test.controller'))
+	.controller('headCtrl', require('./controllers/head.controller'))
+	.controller('countryCtrl', require('./controllers/country.controller'))

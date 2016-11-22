@@ -11,7 +11,8 @@ global.config = {
 		images: SRC_FOLDER + '/**/*.{gpeg,png,gif,svg,jpg}',
 		fonts: SRC_FOLDER + '/**/*.otf',
 		templates: SRC_FOLDER + '/js/app/foo/**/*.html',
-		templatesCompiled: SRC_FOLDER + '/tmp'
+		templatesCompiled: SRC_FOLDER + '/tmp',
+		files: SRC_FOLDER + '/files/**'
 	},
 	build: {
 		styles: BUILD_FOLDER + '/styles',
@@ -19,7 +20,8 @@ global.config = {
 		images: BUILD_FOLDER,
 		index: BUILD_FOLDER,
 		fonts: BUILD_FOLDER,
-		templates: BUILD_FOLDER
+		templates: BUILD_FOLDER,
+		files: BUILD_FOLDER + '/files'
 	}
 } 
 
