@@ -1,26 +1,38 @@
 [
   {
-    "mark": "визы"
+    "mark": "снорклирнг",
+    "link": "#/country/maldives/snorcling"
   },
   {
-    "mark": "дорога"
+    "mark": "визы",
+    "link": "#"
   },
   {
-    "mark": "аэропорт"
+    "mark": "дорога",
+    "link": "#"
   },
   {
-    "mark": "транспорт"
+    "mark": "аэропорт",
+    "link": "#"
   },
   {
-    "mark": "жилье"
+    "mark": "транспорт",
+    "link": "#/country/maldives/transport"
   },
   {
-    "mark": "люди"
+    "mark": "жилье",
+    "link": "#"
   },
   {
-    "mark": "фрукты"
+    "mark": "люди",
+    "link": "#"
   },
   {
-    "mark": "видео"
+    "mark": "фрукты",
+    "link": "#"
+  },
+  {
+    "mark": "видео",
+    "link": "#"
   }
 ]

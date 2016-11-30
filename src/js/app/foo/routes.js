@@ -14,7 +14,11 @@ module.exports = function($routeProvider){
 		templateUrl: "templates/country.html",
 		controller: "countryCtrl"
 	})
+	.when('/country/:countryId/:articleId',{
+		templateUrl: "templates/article.html",
+		controller: "articleCtrl"
+	})
 	.otherwise({
-		redirectTo: "/"
+		redirectTo: "/home"
 	});
 }

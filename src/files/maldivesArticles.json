@@ -1,14 +1,20 @@
 [{
     "country":"Maldives",
+    "countryId":"maldives",
     "title":"Снорклинг",
+    "articleId":"snorcling",
     "picture":"img/snorling.jpg",
+    "pictures":["img/snorling.jpg","img/transport.jpg","img/JPG_8604_1.jpg"],
     "article":"Утром в первый же день на Мальдивах мы отправились изучать морской мир. Снорклинг - от английского слова ...",
     "marks":["мальдивы","снорклинг"]
   },
   {
   "country":"Maldives",
+  "countryId":"maldives",
   "title":"Транспорт",
+  "articleId":"transport",
   "picture":"img/transport.jpg",
+  "pictures":["img/transport.jpg","img/JPG_8604_1.jpg","img/snorling.jpg"],
   "article":"Добраться, конечно не просто. С острова на остров ходят паромы. Также на остров можно жобраться и на самолете...",
   "marks":["мальдивы","транспорт"]
   }
