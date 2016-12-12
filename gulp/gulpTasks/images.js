@@ -4,7 +4,7 @@ var gulp = require('gulp');
 var imagemin = require('gulp-imagemin');
 
 module.exports = gulp.task('images', function(){
-	console.log('images');
+	console.log('_____images_____');
 
 	return gulp.src(config.src.images)
 		.pipe(imagemin())

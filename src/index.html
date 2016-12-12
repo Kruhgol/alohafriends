@@ -1,10 +1,12 @@
+{% load staticfiles %}
+
 <!DOCTYPE html>
 <html lang="en" ng-app="AlohaFriends">
 <head>
 	<meta charset="UTF-8">
 	<title>Aloha, friends!</title>
-	<link href="styles/bootstrap.css" rel="stylesheet">
-	<link rel="stylesheet" href="styles/style.css">
+	<link href="{% static 'static/css/bootstrap.css' %}" rel="stylesheet">
+	<link rel="stylesheet" href="{% static 'static/css/style.css' %}">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
 </head>
@@ -12,6 +14,6 @@
 
 	<ng-view></ng-view>
 
-	<script src="js/build.js"></script>
+	<script src="{% static 'static/js/build.js' %}"></script>
 </body>
 </html>
