@@ -4,17 +4,13 @@ module.exports = function($routeProvider){
 	$routeProvider
 	.when('/',{
 		templateUrl: "templates/home.html",
-		controller: "headCtrl"
-	})
-	.when('/home',{
-		templateUrl: "templates/home.html",
-		controller: "headCtrl"
+		controller: "homeCtrl"
 	})
 	.when('/country/:countryId',{
 		templateUrl: "templates/country.html",
 		controller: "countryCtrl"
 	})
-	.when('/country/:countryId/:articleId',{
+	.when('/article/:articleId',{
 		templateUrl: "templates/article.html",
 		controller: "articleCtrl"
 	})

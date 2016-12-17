@@ -1,83 +1,24 @@
-		<div class="container-fluid article-menu">
-			<div class="row menu">
-
-				<div class="col-lg-1  hidden-md hidden-sm hidden-xs">
-				</div>
-
-				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
-					<a href="#">#Alohafriends</a>
-				</div>
-
-				<div class="col-lg-1 col-md-2 col-sm-2 col-xs-12 menu-element">
-					<a href="#">О нас</a>
-					<div class="menu-element-list">
-						<a href="#">Настя</a><br/>
-						<a href="#">Данил</a>
-					</div>
-				</div>
-
-				<div class="col-lg-1 col-md-2 col-sm-2 col-xs-12 menu-element">
-					<a href="#">Дневник</a>
-					<div class="menu-element-list">
-						<a href="#/country/maldives">Мальдивы</a><br/>
-						<a href="#">Шри-Ланка</a>
-					</div>
-				</div>
-
-				<div class="col-lg-1 col-md-2 col-sm-2 col-xs-12">
-					<a href="#">Партнеры</a>
-				</div>
-
-				<div class="col-lg-1 col-md-2 col-sm-1 col-xs-12">
-					<a href="#">Связь</a>
-				</div>
-
-				<div class="col-lg-2">
-				</div>
-
-				<div class="col-lg-2 col-md-2 col-sm-3 col-xs-12">
-					<a href="#"><div class="sprite sprite-vk"></div></a>
-					<a href="#"><div class="sprite sprite-fb"></div></a>
-					<a href="#"><div class="sprite sprite-in"></div></a>
-				</div>
-
-				<div class="col-lg-1 hidden-md hidden-sm hidden-xs">
-				</div>
-
-			</div>
-		</div>		
+	<div menu-dir></div>	
 	
 	</br>
 	</br>
 
 	<div class="container-fluid article">
 		<div class="row">
-			<div class="col-lg-1 col-md-1"></div>
-			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-					<img ng-src="{{mainImg}}" class="img-responsive">
-					<div class="row">
-						<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-							<button class="previous" ng-click="changeNumberImg('-')" ng-disabled="ifNumberImgNotMin()">&lt;</button>
-						</div>
-						<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"></div>
-						<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-							<button class="next" ng-click="changeNumberImg('+')" ng-disabled="ifNumberImgNotMax()">&gt;</button>
-						</div>
-					</div>
-				<br/>
-
-				<div class="row" ng-repeat="str in strImg">
-					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" 
-						ng-repeat="img in strImg[$index]">
-					<img ng-src="{{img}}" class="img-responsive" ng-click="changeImg(img)" >
-					<br/>
-					</div>
-				</div>
+			<din class="col-lg-2 col-md-2 col-sm-1"></din>
+			<div class="col-lg-8 col-md-8 col-sm-10 col-xs-12">
+				<p>{{article.text}}</p>
 			</div>
-			<div class="col-lg-6 col-md-6 col-sm-8 col-xs-12 marks">
-				<h3>{{article.title}}</h3>
-				<p>{{article.article}}</p>
-			</div>
-			<div class="col-lg-1 col-md-1"></div>	
+			<din class="col-lg-2 col-md-2 col-sm-1"></din>	
 		</div>
 	</div>
+	<br/>
+	
+	<div karusel-dir></div>
+
+
+
+	</br>
+	</br>
+	</br>
+	</br>

@@ -3,12 +3,20 @@ from __future__ import unicode_literals
 from django.db import models
 
 # Create your models here.
+# class Welcome(models.Model):
+#     class Meta:
+#         db_table = "welcome"
+#     welcome_title = models.CharField(max_length=200)
+#     welcome_picture = models.ImageField(null=True, upload_to='images', verbose_name='photo')
 
+#     def __unicode__(self):
+#         return self.country_title    
 
 class Country(models.Model):
     class Meta:
         db_table = "country"
     country_title = models.CharField(max_length=200)
+    country_picture = models.ImageField(null=True, upload_to='images', verbose_name='photo')
 
     def __unicode__(self):
         return self.country_title

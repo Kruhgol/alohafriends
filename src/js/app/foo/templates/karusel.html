@@ -1,0 +1,15 @@
+    <div class="container">
+        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 image">
+            <img ng-src="{{image}}" class="img-responsive" alt="{{image}}" ng-click="nextImage()">
+        </div>
+        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+    </div>
+    <br/>
+    <div class="article-karusel">
+        <div class="prew" ng-click="prewPhotos()"> <div><div> < </div></div> </div>
+        <div class="karusel">
+                <img ng-src="{{img}}" class="img-responsive" ng-repeat="img in article.photos" alt="{{img}}" ng-click="imageClick($index)">
+        </div>
+        <div class="next" ng-click="nextPhotos()"><div><div> > </div></div></div>
+    </div>

@@ -4,7 +4,7 @@ from django.contrib import admin
 from blog.models import Album, Photo, Article, Country, Mark
 
 class ArticleAdmin(admin.ModelAdmin):
-    fields = ['article_title', 'article_text', 'article_date', 'article_album']
+    fields = ['article_title', 'article_text', 'article_date', 'article_album', 'article_country']
 
 class PhotoAdmin(admin.ModelAdmin):
     fields = ['photo_title', 'photo_album', 'photo_place']
@@ -13,7 +13,7 @@ class AlbumAdmin(admin.ModelAdmin):
     fields = ['album_title']
 
 class CountryAdmin(admin.ModelAdmin):
-    fields = ['country_title']
+    fields = ['country_title','country_picture']
 
 class MarkAdmin(admin.ModelAdmin):
     fields = ['mark_name', 'mark_article']
