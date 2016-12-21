@@ -49,9 +49,11 @@
 
     @include respond-to(tablet){
         font-size: 3em;  
+        width: 30px; 
     }
     @include respond-to(mobile){
         font-size: 2em;
+        width: 20px; 
     }
 
     div {
@@ -104,5 +106,18 @@
 }
 
 .image {
-    height: 100%;
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+
+    img{
+        width: 950px;
+
+        @include respond-to(tablet){
+            width: 700px;
+        }
+        @include respond-to(mobile){
+            width: 300px;  
+        }
+    }
 }

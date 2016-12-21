@@ -3,8 +3,8 @@
 module.exports = function($routeProvider){
 	$routeProvider
 	.when('/',{
-		templateUrl: "templates/home.html",
-		controller: "homeCtrl"
+		templateUrl: "templates/home.html"
+		// controller: "homeCtrl"
 	})
 	.when('/country/:countryId',{
 		templateUrl: "templates/country.html",
@@ -13,6 +13,9 @@ module.exports = function($routeProvider){
 	.when('/article/:articleId',{
 		templateUrl: "templates/article.html",
 		controller: "articleCtrl"
+	})
+	.when('/communication',{
+		templateUrl: "templates/communication.html"
 	})
 	.otherwise({
 		redirectTo: "/home"

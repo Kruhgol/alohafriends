@@ -9,6 +9,7 @@ module.exports = function($templateCache, $location){
 
             scope.$watch(watchCountryName, function(newValue, oldValue){ 
                 el.text(newValue.title);
+                console.log("picture - " + newValue.picture);
                 var sss = "background: url(" + newValue.picture + ") no-repeat center; ";
                 element.find('header').attr('style',sss); 
             });
@@ -42,13 +43,19 @@ module.exports = function($templateCache, $location){
                 element.children().children().append(elParent);
                 elParent.append(el);
             }
-            
+            if($location.path().substring(0,14) == '/communication'){
+                
+                element.css('height','50px');
+                element.css('background-color','gray');
+                element.find('header').css('background-image','none');
+
+            }
 
         },
 
         restrict: 'EA',
 
-        template: $templateCache.get('templates/menu.html'),
+        template: $templateCache.get('templates/menu.html')
 
     }
 }

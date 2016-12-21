@@ -6,10 +6,12 @@ from django.http import JsonResponse
 # Create your views here.
 
 def article(request,article):
-    a = Article.objects.get(article_title = article)
+    a = Article.objects.get(article_url = article)
     r = {}
     r['title'] = a.article_title
+    r['url'] = a.article_url
     r['text'] = a.article_text
+    r['anatation'] = a.article_anatation
     r['photos'] = []
     print "********"
     print a.article_album.photo_set.all()
@@ -24,13 +26,15 @@ def article(request,article):
 
 
 def articles(request, country):
-    c = Country.objects.get(country_title = country)
+    c = Country.objects.get(country_url = country)
     articles = c.article_set.all()
     r = []
     for i in articles:
         o={}
         o['title'] = i.article_title
+        o['url'] = i.article_url
         o['text'] = i.article_text
+        o['anatation'] = i.article_anatation
         o['picture'] = i.article_album.photo_set.all()[0].photo_place.url
         if i.mark_set.all() :
             arr=[]
@@ -44,14 +48,17 @@ def articles(request, country):
 
 
 def country(request):
+    print "______country___________"
     coun = Country.objects.all()
     r = []
     for c in coun:
         o = {}
         o['title'] = c.country_title
+        o['url'] = c.country_url
         o['picture'] = c.country_picture.url
         r.append(o)
     res = json.dumps(r)
+    print res
     return HttpResponse(res)
 
 def marks(request):
@@ -60,7 +67,8 @@ def marks(request):
     for m in marks:
         o = {}
         o['name'] = m.mark_name
-        o['link'] = m.mark_article.get().article_title
+        o['url'] = m.mark_url
+        o['link'] = m.mark_article.get().article_url
         r.append(o)
 
     res = json.dumps(r)
@@ -72,6 +80,7 @@ def header(requests):
     for c in coun:
         o = {}
         o['title'] = c.country_title
+        o['url'] = c.country_url
         o['picture'] = c.country_picture.url
         r.append(o)
     res = json.dumps(r)

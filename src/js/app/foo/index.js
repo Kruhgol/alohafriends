@@ -4,7 +4,7 @@ module.exports = angular.module('AlohaFriends.foo',[])
 	.config(require('./routes.js'))
 	.controller('countryCtrl', require('./controllers/country.controller'))
     .controller('homeCtrl', require('./controllers/home.controller'))
-    .controller('menuCtrl', require('./controllers/menu.controller'))
+    // .controller('menuCtrl', require('./controllers/menu.controller'))
     .controller('articlesCtrl', require('./controllers/articles.controller'))
     .controller('articleCtrl', require('./controllers/article.controller'))
 

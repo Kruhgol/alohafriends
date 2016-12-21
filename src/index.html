@@ -10,9 +10,23 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
 </head>
-<body>
+<body ng-controller="homeCtrl">
 
 	<ng-view></ng-view>
+
+<div class="container-fluid ">
+    <div class="row footer">
+        <div class="col-lg-1 col-md-hidden col-sm-hidden col-xs-hidden"></div>
+        <div class="col-lg-7 col-md-8 col-sm-8 col-xs-8">
+        @ #Alohafriends, 2016<br/>
+        При копировании материалов с этого сайта активная индексируемая ссылка на источник обязательна!
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-4">
+        Разработано - <a href="nmkdeveloper.kh.ua">Nikolay Krugol</a>
+        </div>
+        <div class="col-lg-1 col-md-hidden col-sm-hidden col-xs-hidden"></div>
+    </div>
+</div>
 
 	<script src="{% static 'static/js/build.js' %}"></script>
 </body>

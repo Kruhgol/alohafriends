@@ -1,0 +1,19 @@
+.footer {
+    height: 60px;
+    background-color: gray;
+    color: #CCC;
+    font-size: 2em;
+
+    @include respond-to(mobile){
+        font-size: 1rem;
+        text-align: center;
+    }
+    @include respond-to(tablet){
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    a {
+        color: #CCC;
+    }    
+}

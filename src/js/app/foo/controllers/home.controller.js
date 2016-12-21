@@ -1,6 +1,7 @@
 'use strict';
 
 module.exports = function homeCtrl($scope, $http, $location, $routeParams){
+    console.log("homeCtrl");
 	$http.get('/requests/country/').success(function(data){
         console.log(data);
         console.log(data[0]);

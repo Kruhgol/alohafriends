@@ -4,19 +4,24 @@ from django.contrib import admin
 from blog.models import Album, Photo, Article, Country, Mark
 
 class ArticleAdmin(admin.ModelAdmin):
-    fields = ['article_title', 'article_text', 'article_date', 'article_album', 'article_country']
+    fields = ['article_title', 'article_url', 'article_text', 'article_anatation', 'article_date', 'article_album', 'article_country']
 
 class PhotoAdmin(admin.ModelAdmin):
-    fields = ['photo_title', 'photo_album', 'photo_place']
+    fields = ['photo_album', 'photo_place']
+
+class PhotoInline(admin.StackedInline):
+    model = Photo
+    extra = 1
 
 class AlbumAdmin(admin.ModelAdmin):
     fields = ['album_title']
+    inlines = [PhotoInline]
 
 class CountryAdmin(admin.ModelAdmin):
-    fields = ['country_title','country_picture']
+    fields = ['country_title', 'country_url','country_picture']
 
 class MarkAdmin(admin.ModelAdmin):
-    fields = ['mark_name', 'mark_article']
+    fields = ['mark_name', 'mark_url', 'mark_article']
 
 admin.site.register(Article, ArticleAdmin)
 admin.site.register(Photo, PhotoAdmin)

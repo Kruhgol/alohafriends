@@ -1,4 +1,16 @@
 .home {
+	
+	.box-border {
+		border: solid 2px #000000;
+
+		b {
+			color: #000000;
+			font-size: 1em;
+		}
+	}
+	
+
+
 
 	.marks {
 		background-color: #B1A8A8;
@@ -7,6 +19,16 @@
 			float: left;	
 			text-decoration: none;
 			color: #6A6969;
+			height: 1000px;
+			min-height: 200px;
+
+		    @include respond-to(mobile){
+		        height: auto;
+		    }
+		    @include respond-to(tablet){
+		    	height: auto;
+
+		    }
 		}
 		.marker:hover{
 			color: #000000;

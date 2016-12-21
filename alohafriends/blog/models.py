@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from __future__ import unicode_literals
 
 from django.db import models
@@ -16,6 +18,7 @@ class Country(models.Model):
     class Meta:
         db_table = "country"
     country_title = models.CharField(max_length=200)
+    country_url = models.CharField(max_length=50, help_text='Название на английском')
     country_picture = models.ImageField(null=True, upload_to='images', verbose_name='photo')
 
     def __unicode__(self):
@@ -32,18 +35,17 @@ class Album(models.Model):
 class Photo(models.Model):
     class Meta:
         db_table = "photo"
-    photo_title = models.CharField(max_length=200)
     photo_place = models.ImageField(null=True, upload_to='images', verbose_name='photo')
-    photo_album = models.ManyToManyField(Album)
+    photo_album = models.ForeignKey(Album, null=True)
 
-    def __unicode__(self):
-        return self.photo_title
 
 class Article(models.Model):
     class Meta:
         db_table = "artice"
     article_title = models.CharField(max_length=200)
+    article_url = models.CharField(max_length=50, help_text='Название на английском')
     article_text = models.TextField()
+    article_anatation = models.TextField(null=True, help_text='краткое описание')
     article_date = models.DateTimeField()
     article_album = models.ForeignKey(Album, null=True)
     article_country = models.ForeignKey(Country, null=True)
@@ -55,6 +57,7 @@ class Mark(models.Model):
     class Meta:
         db_table = "mark"
     mark_name = models.CharField(max_length=200)
+    mark_url = models.CharField(max_length=50, help_text='Название на английском')
     mark_article = models.ManyToManyField(Article)
 
     def __unicode__(self):

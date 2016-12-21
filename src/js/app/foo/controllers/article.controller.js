@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function articleCtrl($scope, $http, $location, $routeParams){
+module.exports = function articleCtrl($scope, $http, $location, $routeParams, $sce){
 	$scope.articleId = $routeParams.articleId; 
 
     var articleRequest = '/requests/article/' + $scope.articleId + '/';
@@ -10,6 +10,7 @@ module.exports = function articleCtrl($scope, $http, $location, $routeParams){
         $scope.image = $scope.article.photos[0];
         $scope.imageIndex = 0;
         $scope.photosLength = $scope.article.photos.length;
+        $scope.articleText = $sce.trustAsHtml($scope.article.text);
         console.log('________' + $scope.photosLength);
 
     });
