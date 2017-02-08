@@ -6,7 +6,7 @@ var header = require('gulp-header');
 
 module.exports = gulp.task('templates', function(){
 	return gulp.src(config.src.templates)
-		.pipe(templateCache({standalone: true}))
+		.pipe(templateCache())
 		.pipe(header('module.exports = '))
 		.pipe(gulp.dest(config.src.templatesCompiled))
 })

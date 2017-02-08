@@ -1,0 +1,21 @@
+
+<div menu-dir></div>
+</br>
+
+<div class="container-fluid main country">
+    <div class="row" ng-repeat="video in videos">
+        <div id="googleMap" style="width:500px;height:380px;"></div>
+        <br/>
+        <div class="col-lg-1 col-md-1"></div>
+        <div class="col-lg-6 col-md-6 col-sm-8 col-xs-12">
+           <div class="video" ng-bind-html="video.iframe | trustAsHtml"></div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 marks">
+            <h1>{{video.title}}</h1>
+            <p class="article-text">{{video.text}}</p>
+            <!-- <h3>Метки:</h3>
+            <a class="marker" ng-repeat="mark in video.marks">{{mark}}&nbsp;</a> -->
+        </div>
+        <div class="col-lg-1 col-md-1"></div>   
+    </div>
+</div>

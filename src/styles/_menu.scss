@@ -1,60 +1,67 @@
 .menu {
-	font-weight: bold;
-	font-size: 3.5rem;
+    font-family: Engine, sans-serif;
+    font-weight: bold;
+    font-size: 2rem;
+    
+    div {
+        display: inline-block;
+        text-align: center;
+    }
 
+    @include respond-to(tablet){
+        font-size: 1.5rem
+    }
+    @include respond-to(mobile){
+        font-size: 2rem;
+    }
 
-	a {
-		color: white;
-		text-decoration: none;
-	}
+    a {
+        color: #FFFFFF;
+    }
 
-	a:hover {
-		color: #0A3194;
-	}
-	div {
-		text-align: center;
-	}
-	.menu-element {
-		position: relative;
-	}
-	.menu-element:hover .menu-element-list {
-		display: block;
-	}
-	.menu-element-list {
-		display: none;
-		position: absolute;
-		opacity: 0.9;
-		top: 50px;
-		background-color: #E6E9EF;
-		z-index: 5;
-		width: 200px;
-		border: solid 2px #FFFFFF;
-		border-radius: 5px;
+    .menu-element {
+        position: relative;
+    }
 
-		@include respond-to(tablet){
-        	
-	    }
-	    @include respond-to(mobile){
-	        width: 50%;
-	        left: 25%;
-	    }
-	}
-	.menu-element-list a{
-		text-decoration: none;
-	}
-	.sprite {
-		display: inline-block;
-		width: 40px;
-		height: 40px;
-		background-image: url("../img/Sots_seti.png");
-	}
-	.sprite-vk {
-		background-position: 0;
-	}
-	.sprite-in {
-		background-position: 40px 0;
-	}
-	.sprite-fb {
-		background-position: 90px 0;
-	}
+    .menu-element:hover .menu-element-list {
+        display: block;
+    }
+    
+    .menu-element-list {
+        display: none;
+        position: absolute;
+        top: 40px;
+        z-index: 5;
+        width: 100%;
+
+/*        opacity: 0.9;       
+        background-color: #E6E9EF;
+        border: solid 2px #FFFFFF;
+        border-radius: 5px;*/
+
+        @include respond-to(tablet){
+            top: 20px;  
+        }
+        @include respond-to(mobile){
+            top: 20px;
+            width: 50%;
+            left: 25%;
+        }    
+    }
+    .sprite {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        background-image: url("../img/Sots_seti.png");
+    }
+    .sprite-vk {
+        background-position: 0;
+    }
+    .sprite-in {
+        background-position: 40px 0;
+    }
+    .sprite-fb {
+        background-position: 90px 0;
+    }
+
 }

@@ -1,16 +1,19 @@
 'use strict';
 
 module.exports = function homeCtrl($scope, $http, $location, $routeParams){
-    console.log("homeCtrl");
 	$http.get('/requests/country/').success(function(data){
-        console.log(data);
-        console.log(data[0]);
         $scope.countryes = data;
     });
     $http.get('/requests/marks/').success(function(data){
-        console.log(data);
-        console.log(data[0]);
+        var marksStyle = [];
+        for(var i = 0; i < data.length; i++){
+            var rand = Math.random();
+            if (rand < 0.2) rand = 0.2;
+            marksStyle[i] = {'font-size' :  rand * 5 + 'rem'};
+        };
+        $scope.marksStyle = marksStyle;
         $scope.marks = data;
+        console.log(data);
     });
 
 }

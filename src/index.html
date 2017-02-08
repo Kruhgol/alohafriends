@@ -8,26 +8,31 @@
 	<link href="{% static 'static/css/bootstrap.css' %}" rel="stylesheet">
 	<link rel="stylesheet" href="{% static 'static/css/style.css' %}">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
+
 </head>
 <body ng-controller="homeCtrl">
+    <div class="wrapper">
+        <ng-view></ng-view>
 
-	<ng-view></ng-view>
 
-<div class="container-fluid ">
-    <div class="row footer">
-        <div class="col-lg-1 col-md-hidden col-sm-hidden col-xs-hidden"></div>
-        <div class="col-lg-7 col-md-8 col-sm-8 col-xs-8">
-        @ #Alohafriends, 2016<br/>
-        При копировании материалов с этого сайта активная индексируемая ссылка на источник обязательна!
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-4">
-        Разработано - <a href="nmkdeveloper.kh.ua">Nikolay Krugol</a>
-        </div>
-        <div class="col-lg-1 col-md-hidden col-sm-hidden col-xs-hidden"></div>
+        <br/>
+        <br/>
+        <br/>
+        <div class="footer">
+            <div class="footer-cell footer-left">
+            @ #Alohafriends, 2016<br/>
+            При копировании материалов с этого сайта активная индексируемая ссылка на источник обязательна!
+            </div>
+            <div class="footer-cell footer-right">
+            Разработано - <a href="https://nmkdeveloper.kh.ua">Nikolay Krugol</a>
+            </div>
+        </div>        
     </div>
-</div>
+    
+
 
 	<script src="{% static 'static/js/build.js' %}"></script>
+    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAfyGgClqYcu0keXcWbVwont0hxoe4DcFA"></script>
+
 </body>
 </html>

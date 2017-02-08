@@ -62,3 +62,22 @@ class Mark(models.Model):
 
     def __unicode__(self):
         return self.mark_name
+
+class Video(models.Model):
+    class Meta:
+        db_table = "video"
+    video_title = models.CharField(max_length=50)
+    video_url = models.CharField(max_length=50, help_text='Название на английском')
+    video_iframe = models.CharField(max_length=200, help_text='с ютуба src___')
+    video_text = models.TextField()
+    video_country = models.ForeignKey(Country, null=True)
+    
+class Marker(models.Model):
+    class Meta:
+        db_table = "marker"
+    marker_title = models.CharField(max_length=50)
+    marker_latitude = models.CharField(max_length=50, help_text='широта')
+    marker_longitude = models.CharField(max_length=50, help_text='долгота')
+    
+    def __unicode__(self):
+        return self.marker_title

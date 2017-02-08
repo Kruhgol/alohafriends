@@ -8,4 +8,7 @@ urlpatterns = [
     url(r'^country/', views.country),
     url(r'^articles/(?P<country>[^/]+)', views.articles),
     url(r'^article/(?P<article>[^/]+)', views.article),
+    url(r'^mark/(?P<mark>[^/]+)', views.mark),
+    url(r'^video', views.video),
+    url(r'^map', views.map),
 ]
