@@ -38,6 +38,13 @@ class Photo(models.Model):
     photo_place = models.ImageField(null=True, upload_to='images', verbose_name='photo')
     photo_album = models.ForeignKey(Album, null=True)
 
+class Author(models.Model):
+    class Meta:
+        db_table = "author"
+    article_author = models.CharField(max_length=200)
+    article_authorUrl = models.CharField(max_length=200)  
+    def __unicode__(self):
+        return self.article_author 
 
 class Article(models.Model):
     class Meta:
@@ -49,9 +56,17 @@ class Article(models.Model):
     article_date = models.DateTimeField()
     article_album = models.ForeignKey(Album, null=True)
     article_country = models.ForeignKey(Country, null=True)
+    article_picture = models.ImageField(null=True, upload_to='images', verbose_name='photo')
+    article_author = models.ForeignKey(Author, null=True)
 
     def __unicode__(self):
         return self.article_title
+
+class Comment(models.Model):
+    class Meta:
+        db_table = "comment"
+    comment_article = models.ForeignKey(Article, null=True)
+    comment_text = models.TextField()
 
 class Mark(models.Model):
     class Meta:

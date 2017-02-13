@@ -1,9 +1,27 @@
 from django.shortcuts import render
-from blog.models import Country, Article, Album, Photo, Mark, Video, Marker
+from blog.models import Country, Article, Album, Photo, Mark, Video, Marker, Comment
 from django.http import HttpResponse
 import json
 from django.http import JsonResponse
 # Create your views here.
+
+# def header(request):
+#     print '**********************************'
+#     c = Country.objects.all()
+#     r = []
+#     for i in c:
+#         o = {}
+#         o['title'] = i.country_title
+#         o['url'] = i.country_url
+#     res = json.dumps(r)
+#     return HttpResponse(res)
+def addComment(request, article):
+    if 'comment-text' in request.GET:
+        print request.GET['comment-text']
+        text = request.GET['comment-text']
+        a = Article.objects.get(article_url = article)
+        c = Comment.objects.create(comment_article = a, comment_text = text)
+        print '______________________create new comment_______________'
 
 def mark(request,mark):
     print '_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*'
@@ -62,23 +80,35 @@ def video(request):
 
 def article(request,article):
     a = Article.objects.get(article_url = article)
+    author = a.article_author
     r = {}
     r['title'] = a.article_title
     r['url'] = a.article_url
     r['text'] = a.article_text
     r['anatation'] = a.article_anatation
+    r['picture'] = a.article_picture.url
+    r['data'] = json.dumps(a.article_date.strftime("%Y-%m-%d %H:%M:%S"))
+    r['author'] = author.article_author
+    r['authorUrl'] = author.article_authorUrl
     r['photos'] = []
-    print "********"
-    print a.article_album.photo_set.all()
     l = list(a.article_album.photo_set.all())
     for i in l:
-        print "__**__**__"
-        print a.article_album.photo_set.all()[0].photo_place.url
         r['photos'].append(i.photo_place.url)
-        #r['photos'].append(a.article_album.photo_set.all()[i].photo_place.url)
+    comments = list(a.comment_set.all())
+    r['comments'] = []
+    for i in comments:
+        r['comments'].append(i.comment_text)
     res = json.dumps(r)
     return HttpResponse(res)
 
+def country(request, country):
+    c = Country.objects.get(country_url = country)
+    r = {}
+    r['title'] = c.country_title
+    r['url'] = c.country_url
+    r['picture'] = c.country_picture.url
+    res = json.dumps(r)
+    return HttpResponse(res)
 
 def articles(request, country):
     c = Country.objects.get(country_url = country)
@@ -105,7 +135,7 @@ def articles(request, country):
     return HttpResponse(res)
 
 
-def country(request):
+def countries(request):
     print "______country___________"
     coun = Country.objects.all()
     r = []
@@ -139,7 +169,6 @@ def header(requests):
         o = {}
         o['title'] = c.country_title
         o['url'] = c.country_url
-        o['picture'] = c.country_picture.url
         r.append(o)
     res = json.dumps(r)
     return HttpResponse(res)

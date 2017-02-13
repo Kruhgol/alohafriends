@@ -1,85 +1,246 @@
 header {
-    font-family: Engine, sans-serif;
-    height: 900px;
     width: 100%;
-    background: url("../img/JPG_8604_1.jpg") no-repeat center ;   
-    position: relative; 
-    color: #FFFFFF;
+    position: relative;
+    height: auto;
 
-    .row-name-country {
-        width: 100%;
-
-        .name-country {
-            color: #000000;
-            background-color: #FFFFFF;
-            opacity: 0.5;
-            font-size: 6rem;
-            position: absolute;
-            bottom: 20px;
-            width: 100%;
-            display: inline-block;
-            text-align: center;
-
-            @include respond-to(mobile){
-                font-size: 3rem;
-            }
-            @include respond-to(tablet){
-                font-size: 4rem;
-            }        
-        }    
+    .country-img {
+        margin-top: 40px;
     }
 
-
-    .welcome {
-        width: 95%;
+    .menu {
         position: absolute;
-        bottom: 40px;
+        width: 1200px;
+        top: 0px;
+        left: 50%;
+        margin-left: -600px;
 
-        div {
-            display: inline-block;
-            text-align: center;
+        @include respond-to(medium){
+            margin-left: 0;
+            left: 0;
             width: 100%;
-        }
-
-        .name-center {
-        font-size: 10rem;
-        text-align: center;
-        @include respond-to(mobile){
-            font-size: 2rem;
-            text-align: center;
         }
         @include respond-to(tablet){
-            font-size: 6rem;
-            text-align: center;
+            margin-left: 0;
+            left: 0;
+            width: 100%;
         }
-        }
-        .advertising {
-            font-size: 4rem;
-            text-align: center;
-            @include respond-to(mobile){
-                font-size: 2rem;
-                text-align: center;
-            }
-            @include respond-to(tablet){
-                font-size: 3rem;
-                text-align: center;
-            }
-        }   
+        @include respond-to(mobile){
+            margin-left: 0;
+            left: 0;
+            width: 100%;            
+        } 
 
-        .button-header {
-            width: 400px;
-            height: 120px;
-            color: #0A3194;
-            background-color: #E6E9EF;
-            opacity: 0.7;
-            font-size: 5rem;
-            vertical-align: middle;
-            border: none;
-            @include respond-to(mobile){
-                width: 200px;
-                height: 60px;
-                font-size: 3rem;
+
+        .menu-cell {
+            position: relative;
+            
+            span, a  {
+                text-decoration: none;
+                font-size: 24px;
+                color: $menuTextColor;
+                font-weight: bold;
+                font-family: $Engine;
+            }
+
+            .menu-list {
+                display: none;
+            }
+            .mobi-menu-icon {
+                width: 24px;
+                height: 24px;
+                background-color: red;
+            }
+            .menu-list-search {
+                display: none;
+            }
+        }
+
+        .menu-cell:hover .menu-list-search {
+            display: block;
+            position: relative;
+            z-index: 5;
+            background-color: #949ca1;
+            width: 250px;
+            left: -20px;
+            margin-top: 20px;
+            border-radius: 5px;
+            padding: 10px;
+            form{
+                input{
+                    border-radius: 5px;
+                    &:nth-child(1) {
+                        width: 150px;
+                    }
+                    &:nth-child(2) {
+                        width: 75px;
+                    }
+                }
+            }
+
+        }
+
+        .menu-cell:hover .menu-list {
+
+            display: block;
+            position: relative;
+            z-index: 5;
+            background-color: #949ca1;
+            width: 100px;
+            left: -20px;
+            padding: 10px;
+            border-radius: 5px;
+            ul {
+                li {
+                    list-style: none;
+                    a {
+                        text-decoration: none;
+                        color: $menuTextColor;
+                        font-size: 20px;
+                        font-family: $Engine;
+                    }
+                    
+                }
+                li a:hover {
+                    color: #ffffff;
+                    cursor: pointer;
+                }
             }
         }
     }
+    
+    .mobi-menu {
+        
+        display: none;
+        position: fixed;
+        z-index: 5;
+        top: 30px;
+        left: 10%;
+        background-color: #949ca1;
+        width:200px;
+        min-width: 40%;
+        opacity: 0.7;
+        padding-left: 20px;
+
+        .close-mobi-menu {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            color: $wc;
+            font-size: 20px;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        div {
+            a, span {
+                font-size: 24px;
+                color: $wc;
+                font-weight: bold;
+                font-family: $Engine;
+                text-decoration: none;
+            }
+            a:hover{
+                color: $menuTextColor;
+                cursor: pointer;
+            }
+        }
+        .journal {
+            .mobi-menu-list {
+                padding-left: 20px;
+                ul {
+                    list-style: none;
+                }
+                a {
+                    color: $wc;
+                    font-size: 20px;
+                    font-family: $Engine;
+                }
+                a:hover{
+                    color: $menuTextColor;
+                    cursor: pointer;
+                }
+            }
+        }
+
+    }  
+
+    .titul {
+        display: none;
+        position: absolute;
+        top: 10%;
+        width: 100%;
+        margin: auto;
+
+        animation-name: emercion;
+        animation-duration: 10s;
+
+        span {
+            display: inline-block;
+            width: 100%;
+            color: $menuTextColor;
+            text-align: center;
+            font-family: $Engine;
+            
+            &:nth-child(1) {
+                font-size: 120px;
+                line-height: 0.85em;
+                letter-spacing: 10px;            
+            }
+            &:nth-child(3) {
+                font-size: 40px;
+            }
+        }
+    }
+
+    .country-name {
+        display: none;
+        width: 100%;
+        position: absolute;
+        bottom: 30px;
+        text-align: center;
+        background-color: #dad8d5;
+        opacity: 0.7;
+        color: $menuTextColor;
+        font-family: $Engine;
+        font-size: 48px;
+
+        animation-name: emercion;
+        animation-duration: 10s;
+
+        @include respond-to(tablet){
+            font-size: 36px;
+            bottom: 20px;
+        }
+        @include respond-to(mobile){
+            font-size: 24px;
+            bottom: 10px;
+        } 
+    } 
+    .article-name {
+        display: none;
+        width: 100%;
+        position: absolute;
+        bottom: 30px;
+        text-align: center;
+        background-color: #dad8d5;
+        opacity: 0.7;
+        color: $menuTextColor;
+        font-family: $Engine;
+        font-size: 48px;
+
+        animation-name: emercion;
+        animation-duration: 10s;
+
+
+        @include respond-to(tablet){
+            font-size: 36px;
+            bottom: 20px;
+        }
+        @include respond-to(mobile){
+            font-size: 24px;
+            bottom: 10px;
+        } 
+    }      
 }

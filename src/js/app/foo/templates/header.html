@@ -1,0 +1,91 @@
+<header ng-controller="headerCtrl">
+    <img alt="" width="100%" id="header-img">
+    <div class="container-fluid menu">
+        <div class="row">
+            <div class="col-lg-1 col-md-1 col-sm-2 col-xs-1"></div>
+            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-4 menu-cell">
+                <a href="#/">#Alohafriends</a>
+            </div>
+            <div class="hidden-lg hidden-md col-sm-2 col-xs-3"></div>
+            <div class="col-lg-1 col-md-1 hidden-sm hidden-xs menu-cell">
+                <span>Дневник</span>
+                <div class="menu-list open-menu-list-animation">
+                    <ul>
+                        <li ng-repeat="country in countries"><a href="#/country/{{country.url}}">{{country.title}}</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-1 col-md-1 hidden-sm hidden-xs menu-cell">
+                <a href="#">Карта</a>
+            </div>
+            <div class="col-lg-1 col-md-1 hidden-sm hidden-xs menu-cell">
+                <span>Проекты</span>
+            </div>
+            <div class="col-lg-1 col-md-1 hidden-sm hidden-xs menu-cell">
+                <a href="#">Партнеры</a>
+            </div>
+            <div class="col-lg-1 col-md-1 hidden-sm hidden-xs menu-cell">
+                <a href="#">Связь</a>
+            </div>
+            <div class="col-lg-1 col-md-1 hidden-sm hidden-xs menu-cell">
+                <div class="sprite search"></div>
+                <div class="menu-list-search open-menu-list-animation">
+                    <form action="" name="search">
+                        <input type="text" placeholder="Что ищем?">
+                        <input type="button" value="search">
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-1 col-md-1 hidden-sm hidden-xs menu-cell">
+                <div class="sprite language"></div>
+            </div>
+            <div class="col-lg-1 col-md-2 hidden-sm hidden-xs menu-cell">
+                <a href="#"><div class="socseti sprite vk"></div></a>
+                <a href="#"><div class="socseti sprite fb"></div></a>
+                <a href="#"><div class="socseti sprite inst"></div></a>
+            </div>
+            <div class="hidden-lg hidden-md col-sm-2 col-xs-2 menu-cell">
+                <div class="mobi-menu-icon"></div>
+            </div>
+            <div class="col-lg-1 hidden-md col-sm-2 col-xs-2"></div>
+        </div>  
+    </div>
+    <div class="mobi-menu">
+        <div class="close-mobi-menu">X</div>
+        <div><a href="#">#Alohafriends</a></div>
+        <div class="journal">
+            <span>Дневник</span>
+            <div class="mobi-menu-list">
+                <ul>
+                    <li>
+                        <a href="#">Мальдивы</a>
+                    </li>
+                    <li>
+                        <a href="#">Шри-ланка</a>
+                    </li>
+                    <li>
+                        <a href="#">Малайзия</a>
+                    </li>
+                    <li>
+                        <a href="#">Таиланд</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div><a href="#">Карта</a></div>
+        <div><a href="#">Проекты</a></div>
+        <div><a href="#">Партнеры</a></div>
+        <div><a href="#">Связь</a></div>
+    </div>
+    <div class="titul" id="titul">
+        <span>
+            #ALOHAFRIENDS
+        </span><br/>
+        <span>
+            Wedding travel around the World
+        </span>
+    </div>
+    <div class="country-name" id="country-name">{{country.title}}</div>
+    <div class="article-name" id="article-name">{{article.name}}</div>
+
+</header>

@@ -1,71 +1,82 @@
 'use strict';
 
-module.exports = function articleCtrl($scope, $http, $location, $routeParams, $sce){
-	$scope.articleId = $routeParams.articleId; 
+module.exports = function($scope, $http, $location, $routeParams, $sce){
+    $scope.articleId = $routeParams.articleId; 
 
     var articleRequest = '/requests/article/' + $scope.articleId + '/';
     $http.get(articleRequest).success(function(data){
         console.log(data);
         $scope.article = data;
-        $scope.image = $scope.article.photos[0];
-        $scope.imageIndex = 0;
-        $scope.photosLength = $scope.article.photos.length;
         $scope.articleText = $sce.trustAsHtml($scope.article.text);
-        console.log('________' + $scope.photosLength);
-
+        $scope.imgArray = [];
+        for(var i=0; i<$scope.article.photos.length/4; i++){
+            $scope.imgArray[i] = []
+        }
+        var j = 0;
+        var k = 0;
+        for (var i=0; i < $scope.article.photos.length; i++){
+                $scope.imgArray[k][j] = {};
+                $scope.imgArray[k][j]['src'] = $scope.article.photos[i];
+                $scope.imgArray[k][j]['alt'] = i;
+                j++;
+                if(j==4){
+                    j=0;
+                    k++;
+                }
+        }
     });
+
+    $scope.photoViwer = function(event) {
+        $scope.index = event.target.getAttribute('data-number');
+        var photoViwerBlock = document.getElementById("photoviwer");
+
+        var height = document.documentElement.clientHeight;
+        var width = document.documentElement.clientWidth;
+
+        photoViwerBlock.style = 'height:' + height + 'px; width:' + width + 'px' + '; display: table';
+        var div = document.getElementById("photoviwer-img");
+        // if (height >= width){
+        //     div.style = 'background-size: 80% auto;';
+        // }
+        // if (height < width){
+        //     div.style = 'background-size: auto 90%;';
+        // }
+        div.style = 'background-image: url(' + $scope.article.photos[$scope.index] + ');'; 
+
+        $scope.preview = function() {
+            if ($scope.index <= 0) return;
+            $scope.index--;
+            div.style = 'background-image: url(' + $scope.article.photos[$scope.index] + ');';
+        }
+        $scope.next = function() {
+            if ($scope.index >= $scope.article.photos.length-1) return;
+            $scope.index++;
+            div.style = 'background-image: url(' + $scope.article.photos[$scope.index] + ');';
+        }
+
+    }
+
+    $scope.photoViwerClose = function(){
+        var photoViwerBlock = document.getElementById("photoviwer");
+        photoViwerBlock.style = 'display: none';
+    }
 
 }
 
 
 
 
-
-
-	// $http.get('files/' + $scope.countryId + '/' + $scope.articleId + '.json').success(function(data){
-	// 	$scope.article = data;
-	// 	$scope.pictures = $scope.article.pictures;
-	// 	$scope.mainImg = $scope.pictures[$scope.article.picture];
-
-	// 	$scope.strImg=[];
-	// 	var arr=[];
-	// 	var k = 0;
-	// 	var j = 0;
-
-	// 	for(var i = 0; i < $scope.pictures.length; i++){
-	// 		arr.push($scope.pictures[i]);
-	// 		console.log(arr);
-	// 		if(arr.length == 3){
-	// 			$scope.strImg[k] = arr;
-	// 			arr = [];
-	// 			k++;
-	// 		}
-	// 	}
-	// });
-	
-	// $scope.changeImg = function(img){
-	// 	$scope.mainImg = img;
-	// }
-
-	// $scope.changeNumberImg = function(direction){
-	// 	if(direction === "+") {
-	// 		if($scope.article.picture != $scope.article.pictures.length - 1){
-	// 			$scope.article.picture++;
-	// 			$scope.mainImg = $scope.pictures[$scope.article.picture];
-	// 		}
-	// 	} else if(direction === "-"){
-	// 		if($scope.article.picture != 0){
-	// 			$scope.article.picture--;
-	// 			$scope.mainImg = $scope.pictures[$scope.article.picture];
-	// 		}
-	// 	}
-	// }
-
-	// $scope.ifNumberImgNotMin = function(){
-
-	// 	if ($scope.article.picture == 0) return true;
-	// }
-
-	// $scope.ifNumberImgNotMax = function(){
-	// 	if ($scope.article.picture == $scope.article.pictures.length - 1) return true;
-	// }
+    // $http.get('/requests/country/').success(function(data){
+    //     $scope.countryes = data;
+    // });
+    // $http.get('/requests/marks/').success(function(data){
+    //     var marksStyle = [];
+    //     for(var i = 0; i < data.length; i++){
+    //         var rand = Math.random();
+    //         if (rand < 0.2) rand = 0.2;
+    //         marksStyle[i] = {'font-size' :  rand * 5 + 'rem'};
+    //     };
+    //     $scope.marksStyle = marksStyle;
+    //     $scope.marks = data;
+    //     console.log(data);
+    // });

@@ -8,25 +8,86 @@
 	<link href="{% static 'static/css/bootstrap.css' %}" rel="stylesheet">
 	<link rel="stylesheet" href="{% static 'static/css/style.css' %}">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <script src="https://vk.com/js/api/openapi.js?139" type="text/javascript"></script>
 </head>
-<body ng-controller="homeCtrl">
+<body>
     <div class="wrapper">
-        <ng-view></ng-view>
+        <div class="content">
 
-
-        <br/>
-        <br/>
-        <br/>
+            <ng-view></ng-view>
+            
+        </div>
         <div class="footer">
-            <div class="footer-cell footer-left">
-            @ #Alohafriends, 2016<br/>
-            При копировании материалов с этого сайта активная индексируемая ссылка на источник обязательна!
+
+            <div class="seetoo">
+                <h1>Смотрите также:</h1>
+                <div class="container">
+                    <div class="row seetoo-popular">
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <img src="media/images/transport.png" alt="transport" width="100%">
+                            <span>Транспорт</span>/<span>Мальдивы</span><br/>
+                            <span>17/09/16</span>   
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <img src="img/transport.png" alt="transport" width="100%">
+                            <span>Транспорт</span>/<span>Мальдивы</span><br/>
+                            <span>17/09/16</span>   
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <img src="img/transport.png" alt="transport" width="100%">
+                            <span>Транспорт</span>/<span>Мальдивы</span><br/>
+                            <span>17/09/16</span>   
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <img src="img/transport.png" alt="transport" width="100%">
+                            <span>Транспорт</span>/<span>Мальдивы</span><br/>
+                            <span>17/09/16</span>   
+                        </div>
+                    </div>
+
+                    <div class="row seetoo-bottom">
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <div id="vk_groups" style="position: static;"></div>
+                            <script type="text/javascript">
+                            VK.Widgets.Group("vk_groups", {mode: 0, width: "250", height: "200"}, 59665172);
+                            </script>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12"> 
+                             <iframe src="http://widget.instagramm.ru/?imageW=2&imageH=1&thumbnail_size=117&type=0&typetext=alohafriendss_&head_show=1&profile_show=1&shadow_show=1&bg=ffffff&head_bg=46729b&subscribe_bg=ad4141&border_color=c3c3c3" allowtransparency="true" frameborder="0" scrolling="no" style="border:none;overflow:hidden;width:260px;height:272px;"></iframe>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">    
+                           <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Falohafriendss&tabs=timeline&width=250&height=200&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="250" height="200" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <h1>Metki</h1>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="footer-cell footer-right">
-            Разработано - <a href="https://nmkdeveloper.kh.ua">Nikolay Krugol</a>
+
+            <div class="footer-about">
+                <table>
+                    <tr>
+                        <td>@ #Alohafriends</td>
+                        <td>
+                            <div class="socseti sprite vk"></div>
+                            <div class="socseti sprite fb"></div>
+                            <div class="socseti sprite inst"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>При копировании материалов с данного сайта ссылка на источник обязательна</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Сайт размещен на хостинге <a href="#">mchost.ru</a></td>
+                        <td>created by <a href="#">Nikolay Krugol</a></td>
+                    </tr>
+                </table>
             </div>
-        </div>        
+        
+        </div>
+        <div class="footer-line"></div>
     </div>
     
 

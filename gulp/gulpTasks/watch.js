@@ -8,7 +8,8 @@ module.exports = gulp.task('watch', function(){
     gulp.watch(config.src.templates, ['templates','browserify']);
     gulp.watch(config.src.styles, ['styles']);
     gulp.watch(config.src.js, ['browserify']);
-    gulp.watch(config.src.templatesDirective, ['templatesDirective']);
+    gulp.watch(config.src.index, ['assets']);
+    // gulp.watch(config.src.templatesDirective, ['templatesDirective']);
     // gulp.watch(config.src.templatesCompiledBrowserify, ['browserify']);
 })
 

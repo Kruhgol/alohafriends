@@ -6,5 +6,5 @@ module.exports =
         // modules
         require('./foo').name,
         //templates
-        require('../../tmp/templates').name
+        require('../../tmp/templates').name,
     ])
