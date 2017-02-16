@@ -54,13 +54,7 @@
         <div class="sprite fb-center"></div>
         <div class="sprite inst-center"></div>
     </div>
-    <div class="comments-wrapper">
-        <h1>Оставить комментарии:</h1>
-        <form action="{{'/requests/'+article.url+'/addcomment/'}}" method="GET" name="comment-form">
-            <input type="text" name="comment-text" placeholder="Введите коментарий"></textarea>
-            <input type="submit" value="Оставить комментарий">
-        </form>
-        <h1>Комментарии:</h1>
-        <p ng-repeat="comment in article.comments">{{comment}}</p>
-    </div>
+
+    <comments-dir ></comments-dir>
+
 </div>

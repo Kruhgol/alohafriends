@@ -1,0 +1,13 @@
+<div class="comments-wrapper">
+    <h1>Оставить комментарии:</h1>
+    <form name="comment-form">
+        <input name="text" placeholder="Введите коментарий" ng-model="answer.text">
+        <input type="submit" value="Оставить комментарий" ng-click="sendComment(answer)">
+    </form>
+    <h1>Комментарии:</h1>
+    <p ng-repeat="comment in c track by $index">{{comment}}</p>
+    <!-- <div class="comments" id="comments"></div> -->
+</div>
+
+
+<!-- action="{{'/requests/'+article.url+'/addcomment/'}}" -->

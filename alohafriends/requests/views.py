@@ -3,6 +3,7 @@ from blog.models import Country, Article, Album, Photo, Mark, Video, Marker, Com
 from django.http import HttpResponse
 import json
 from django.http import JsonResponse
+
 # Create your views here.
 
 # def header(request):
@@ -15,13 +16,32 @@ from django.http import JsonResponse
 #         o['url'] = i.country_url
 #     res = json.dumps(r)
 #     return HttpResponse(res)
+def sicret(request):
+    print 'hello'
+
 def addComment(request, article):
-    if 'comment-text' in request.GET:
-        print request.GET['comment-text']
-        text = request.GET['comment-text']
+    a = Article.objects.get(article_url = article)
+    if 'text' in request.POST:
+        text = request.POST['text']
         a = Article.objects.get(article_url = article)
         c = Comment.objects.create(comment_article = a, comment_text = text)
-        print '______________________create new comment_______________'
+    comments = list(a.comment_set.all())
+    r = {}
+    r['comments'] = []
+    for i in comments:
+        r['comments'].append(i.comment_text)
+    res = json.dumps(r)
+    return HttpResponse(res)            
+
+    # print request.GET['text']
+    
+    # if 'text' in request.GET:
+    #     print 'urrrra'
+        # print request.GET.aaa['text']
+        # text = request.GET['comment-text']
+        # a = Article.objects.get(article_url = article)
+        # c = Comment.objects.create(comment_article = a, comment_text = text)
+        # print '______________________create new comment_______________'
 
 def mark(request,mark):
     print '_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*'
@@ -94,7 +114,13 @@ def article(request,article):
     l = list(a.article_album.photo_set.all())
     for i in l:
         r['photos'].append(i.photo_place.url)
+    res = json.dumps(r)
+    return HttpResponse(res)
+
+def comments(request, article):
+    a = Article.objects.get(article_url = article)
     comments = list(a.comment_set.all())
+    r = {}
     r['comments'] = []
     for i in comments:
         r['comments'].append(i.comment_text)

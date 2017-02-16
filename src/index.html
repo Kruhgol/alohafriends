@@ -10,9 +10,30 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://vk.com/js/api/openapi.js?139" type="text/javascript"></script>
 </head>
-<body>
+<body ng-controller="appCtrl">
     <div class="wrapper">
         <div class="content">
+            <div class="auth" ng-hide="user.is_active">
+                <p>Auth</p>
+                <form>
+                    <label>
+                        Имя пользователя:
+                        <input type="text" ng-model="user.username"/>
+                    </label>
+                    <label>
+                        Пароль:
+                        <input type="password" ng-model="user.password"/>
+                    </label>
+                    <input type="submit" value="Войти" ng-click="login(user)"/>
+                    <a href="#/registration">зарегистрирываться</a>
+                </form>
+            </div>
+            <div class="auth" ng-show="user.is_active">
+                <p>Logout</p>
+                <form>
+                    <input type="submit" value="Выйти" ng-click="logout()"/>
+                </form>
+            </div>
 
             <ng-view></ng-view>
             

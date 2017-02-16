@@ -14,6 +14,10 @@ module.exports = function($routeProvider){
 		templateUrl: "article.html",
 		controller: "articleCtrl"
 	})
+	.when('/registration', {
+		templateUrl: 'registration.html',
+		controller: 'registrationCtrl'
+	})
 	// .when('/communication',{
 	// 	templateUrl: "templates/communication.html"
 	// })
