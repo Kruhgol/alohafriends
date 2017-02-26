@@ -43,5 +43,8 @@
   "bugs": {
     "url": "https://github.com/Kruhgol/alohafriends/issues"
   },
-  "homepage": "https://github.com/Kruhgol/alohafriends#readme"
+  "homepage": "https://github.com/Kruhgol/alohafriends#readme",
+  "dependencies": {
+    "angular-cookies": "^1.5.8"
+  }
 }

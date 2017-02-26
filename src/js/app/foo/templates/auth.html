@@ -1,0 +1,16 @@
+
+
+<div class="auth" ng-show="authVisible && (!userConfig.isAuth)">
+    <div class="auth-close" ng-click="authVisible = 0">X</div>
+    <h1>Для того чтобы оставить комментарии на сайте, пожалуйста авторизуйтесь!</h1>
+    <div class="auth-fb" ng-click="fbAuth()" ng-hide="fbVisible || vkVisible"></div>
+    <div class="auth-vk" ng-click="vkAuth()" ng-hide="fbVisible || vkVisible"></div>
+    
+    <div class="auth-block" ng-show="vkVisible">
+        <div id="vk_auth"></div>
+    </div>
+
+    <div class="auth-block" ng-show="fbVisible">
+        <div class="fb-login-button" data-max-rows="1" data-size="large" data-show-faces="true" data-auto-logout-link="true"></div>
+    </div>
+</div>

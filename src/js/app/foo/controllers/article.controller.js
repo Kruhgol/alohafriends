@@ -5,6 +5,7 @@ module.exports = function($scope, $http, $location, $routeParams, $sce){
 
     var articleRequest = '/requests/article/' + $scope.articleId + '/';
     $http.get(articleRequest).success(function(data){
+        console.log("FGHJHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH")
         console.log(data);
         $scope.article = data;
         $scope.articleText = $sce.trustAsHtml($scope.article.text);

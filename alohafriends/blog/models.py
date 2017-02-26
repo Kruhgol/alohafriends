@@ -67,6 +67,11 @@ class Comment(models.Model):
         db_table = "comment"
     comment_article = models.ForeignKey(Article, null=True)
     comment_text = models.TextField()
+    comment_user_first_name = models.CharField(max_length=50)
+    comment_user_last_name = models.CharField(max_length=50)
+    comment_user_link = models.CharField(max_length=150)
+    comment_user_picture = models.CharField(max_length=150)
+
 
 class Mark(models.Model):
     class Meta:

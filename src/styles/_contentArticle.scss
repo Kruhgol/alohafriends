@@ -4,7 +4,6 @@
     margin: auto;
     margin-top: 50px;
     width: 100%;
-    border: solid 1px black;
     background-color: #ffffff;
     
     @include respond-to(tablet){
@@ -34,6 +33,10 @@
             width: 100%;
             a {
                 float: right;
+                font-family: $Engine;
+                text-decoration: none;
+                color: $menuTextColor;
+                font-size: 20px;
             }
         }
     } 
@@ -53,6 +56,12 @@
                         background-repeat: no-repeat;
                         background-size: auto 200px;
                         background-position: center;
+                        @include respond-to(tablet){
+                            height: 150px
+                        }
+                        @include respond-to(mobile){
+                            height: 150px
+                        } 
                     }
                 }
             }
@@ -70,6 +79,9 @@
         .article-photo:hover {
             cursor: pointer;
         }
+    }
+    .soc-seti-center {
+        margin-top: 50px;
     }
 }
 
@@ -119,4 +131,5 @@
             cursor: pointer;
         }
     }
+
 }

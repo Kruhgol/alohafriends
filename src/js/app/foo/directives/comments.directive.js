@@ -6,7 +6,11 @@ module.exports = function($templateCache, $location){
 
         },
 
-        controller: function($scope, $http, $location, $routeParams, $sce){
+        controller: function($scope, $http, $location, $routeParams, $sce, userConfig){
+            console.log('__2__');
+            console.log(userConfig);
+            $scope.userConfig = userConfig;
+
             var commentsRequest = '/requests/comments/' + $scope.articleId + '/';
             $http.get(commentsRequest).success(function(data){
                 $scope.comments = data;
@@ -18,10 +22,16 @@ module.exports = function($templateCache, $location){
 
             $scope.sendComment = function(answer) {
                 var commentAddRequest = '/requests/' + $scope.articleId + '/addcomment/';
-
+                answer['first_name'] = userConfig.first_name;
+                answer['last_name'] = userConfig.last_name;
+                answer['link'] = userConfig.link;
+                answer['picture'] = userConfig.picture;
+                console.log(answer);
                 $http.post(commentAddRequest, answer).success(function(data){
                     $scope.comments = data;
                     $scope.c = $scope.comments.comments;
+                    console.log("((())))((()))");
+                    console.log(data);
                     });
             }
 

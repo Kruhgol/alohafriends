@@ -31,6 +31,18 @@ module.exports = function($templateCache, $location){
                     return scope.article;
                 }            
             }
+            if($location.path().substring(0,5) == '/mark' 
+                || $location.path().substring(0,7) == '/author'
+                || $location.path().substring(0,7) == '/design'
+                || $location.path().substring(0,4) == '/map'){
+                var menuRow = document.getElementById('menu-row');
+                //menuRow.style.backgroundColor = 'grey';
+                menuRow.style.borderBottom = 'solid 1px #000000';
+                menuRow.style.position = 'absolute';
+                menuRow.style.top = '0px';
+                menuRow.style.height = '40px';
+                menuRow.style.width = '100%';
+            }
 
 
 

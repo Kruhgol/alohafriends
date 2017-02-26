@@ -18,6 +18,23 @@ module.exports = function($routeProvider){
 		templateUrl: 'registration.html',
 		controller: 'registrationCtrl'
 	})
+	.when('/mark/:markId', {
+		templateUrl: 'mark.html',
+		controller: 'markCtrl'
+	})
+	.when('/author/:authorId', {
+		templateUrl: 'author.html',
+		controller: 'authorCtrl'
+	})
+	.when('/contacts', {
+		templateUrl: 'contacts.html'
+	})
+	.when('/map', {
+		templateUrl: 'map.html'
+	})
+	.when('/design', {
+		templateUrl: 'design.html'
+	})
 	// .when('/communication',{
 	// 	templateUrl: "templates/communication.html"
 	// })

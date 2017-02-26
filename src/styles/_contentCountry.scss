@@ -4,7 +4,6 @@
     margin: auto;
     margin-top: 50px;
     width: 100%;
-    border: solid 1px black;
     background-color: #ffffff;
     
     @include respond-to(tablet){
@@ -16,7 +15,7 @@
 
     .articles {
         .article {
-            margin-bottom: 25px;
+            margin-bottom: 50px;
             .article-text {
                 a:hover {
                     color: #000000;
@@ -30,22 +29,36 @@
                     color: $menuTextColor;
                     font-family: $Engine;
                     font-size: 28px;
+                    @include respond-to(mobile){
+                        margin-top: 16px
+                    } 
                 }
                 p{
                     color: $menuTextColor;
                     font-family: $Engine;
                     font-size: 18px;
+                    word-wrap: break-word;
+                    @include respond-to(mobile){
+                        margin-top: 14px
+                    }
                 }
                 .article-marks,
-                .article-marks a {
+                .article-marks a,
+                .article-author,
+                .article-author a {
                     color: $menuTextColor;
                     font-family: $Engine;
                     font-size: 18px;
-                    text-decoration: none; 
+                    text-decoration: none;
+                    @include respond-to(mobile){
+                        margin-top: 14px
+                    } 
                 }
-                .article-marks {
+                .article-marks,
+                .article-author {
                     a {
                         margin-right: 5px;
+                        display: inline;
                     }
                     /*a:hover {
                         color: #000000;
@@ -54,5 +67,8 @@
                 }
             }
         }
+    }
+    .soc-seti-center {
+        margin-top: 50px;
     }
 }

@@ -5,6 +5,19 @@ module.exports = function($scope, $http, $location, $routeParams){
         $scope.countries = data;
         console.log(data);
     });
+
+    $scope.getSearch = function(markSearch) {
+        $http.post('/requests/searchMark/', markSearch).success(function(data){
+            console.log('fghjklfghjklghjkl');
+            console.log(data);
+            if(data.status){
+                window.location.assign('#/mark/' + data.mark)
+            }
+            else{
+                alert('Извините по запросу \"' + markSearch.text + '\" ничего не найденно!')
+            }
+        });
+    }
 }
 
 
