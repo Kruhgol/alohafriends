@@ -17,4 +17,5 @@ urlpatterns = [
     url(r'^video', views.video),
     url(r'^map', views.map),
     url(r'^(?P<article>[^/]+)/addcomment/', views.addComment),
+    url(r'^randomArticle', views.randomArticle),
 ]

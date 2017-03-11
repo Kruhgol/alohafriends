@@ -3,6 +3,7 @@ from blog.models import Country, Article, Album, Photo, Mark, Video, Marker, Com
 from django.http import HttpResponse
 import json
 from django.http import JsonResponse
+from random import random
 
 
 # Create your views here.
@@ -19,6 +20,26 @@ from django.http import JsonResponse
 #     return HttpResponse(res)
 def sicret(request):
     print 'hello'
+
+def randomArticle(request):
+    articles = Article.objects.all();
+    print '____randomArticle____'
+    r = []
+    for i in range(3):
+        print '___' 
+        print i
+        randomNumber =  int(random()*(len(articles)));
+        article = articles[randomNumber]
+        o = {}
+        o['title'] = article.article_title
+        o['url'] = article.article_url
+        o['picture'] = article.article_album.photo_set.all()[0].photo_place.url
+        o['data'] = json.dumps(article.article_date.strftime("%Y-%m-%d %H:%M:%S"))
+        o['country'] = article.article_country.country_title
+        o['random'] = randomNumber
+        r.append(o)
+    res = json.dumps(r)
+    return HttpResponse(res)
 
 def searchMark(request):
     if 'text' in request.POST:

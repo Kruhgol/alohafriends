@@ -51,9 +51,11 @@ header {
                 display: none;
             }
             .mobi-menu-icon {
+                margin-top: 5px;
                 width: 24px;
                 height: 24px;
-                background-color: red;
+                background: url('./../img/menu.png') no-repeat; 
+                background-size: 100%;
             }
             .menu-list-search {
                 display: none;

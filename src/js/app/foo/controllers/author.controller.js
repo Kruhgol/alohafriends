@@ -1,13 +1,16 @@
 'use strict';
 
-module.exports = function($scope, $http, $location, $routeParams){
+module.exports = function($scope, $http, $location, $routeParams, requestsService){
     $scope.authorId = $routeParams.authorId;
 
-    var markRequest = '/requests/author/' + $scope.authorId + '/';
-    $http.get(markRequest).success(function(data){
-        $scope.articles = data.articles;
-        $scope.author = data;
-        console.log(data);
+    requestsService.getAuthorArticles($scope.authorId).then(function(result){
+        $scope.articles = result.data.articles;
+        $scope.author = result.data;
     });
+
+    // $http.get(markRequest).success(function(data){
+    //     $scope.articles = data.articles;
+    //     $scope.author = data;
+    // });
 }
 

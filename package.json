@@ -45,6 +45,7 @@
   },
   "homepage": "https://github.com/Kruhgol/alohafriends#readme",
   "dependencies": {
-    "angular-cookies": "^1.5.8"
+    "angular-cookies": "^1.5.8",
+    "angular-socialshare": "^2.3.7"
   }
 }

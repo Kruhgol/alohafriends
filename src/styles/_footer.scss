@@ -10,28 +10,49 @@
             font-size: 20px;
             margin: 20px 0 10px 20px;
         }
+        .seetoo-popular {
+            .random-article {
+                a {
+                    &:hover {
+                        text-decoration: none;
+                    }
+                    span {
+                        font-family: $Engine;
+                        text-decoration: none;
+                        font-size: 18px;
+                        color: red;
+                    }
+                }
+            }
+        }
         .seetoo-bottom {
             padding: 20px 0 20px 0;
             div {
                 height: 580px;
                 position: relative;
+
                 &:nth-child(1) iframe{
                     position: absolute;
                     left: 50%;
                     margin-left: -125px;
                 }
                 &:nth-child(2) iframe{
+                    margin-top: 20px;
                     position: absolute;
                     left: 50%;
                     margin-left: -130px;
                 }
                 &:nth-child(3) iframe{
+                    margin-top: 20px;
                     position: absolute;
                     left: 50%;
                     margin-left: -125px;
                 }
                 /*border: solid black 1px;*/
             }
+        }
+        .seetoo-middle {
+            height: 100px
         }
     }
 
@@ -67,6 +88,22 @@
             } 
             tr:nth-child(3) {
                 text-align: right;
+            }
+        }
+    }
+    .marks {
+        p {
+            word-wrap: break-word;
+            /*line-height: 60px;*/
+            /*vertical-align: text-bottom;*/
+            a {
+                margin-right: 10px;
+                vertical-align: middle;
+                font-family: $Engine;
+            }
+            a:hover {
+                text-decoration: none;
+                font-weight: bold;
             }
         }
     }

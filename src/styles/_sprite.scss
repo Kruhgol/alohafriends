@@ -40,7 +40,7 @@
 
 .soc-seti-center {
     margin: auto;
-    width: 100px;
+    width: 70px;
     margin-bottom: 100px;
     div {
         dispaly: inline-block;
@@ -49,19 +49,26 @@
 }
 
 .vk-center {
+    display: inline-block;
     height: 30px;
     width: 30px;
-    background-position: -95px -68px;
-    margin-right: 2px;
 }
 .fb-center {
+    display: inline-block;
     height: 30px;
     width: 30px;
     background-position: -5px -56px;
-    margin-right: 2px;
+    margin-left: 10px;
+    &:hover {
+        cursor: pointer;
+    }
 }
 .inst-center {
+    display: inline-block;
     height: 30px;
     width: 30px;
     background-position: -105px -5px;
+}
+.mobi-menu-icon {
+    background: url('./../img/menu.png') no-repeat;     
 }

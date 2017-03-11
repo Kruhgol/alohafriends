@@ -8,14 +8,15 @@
 	<link href="{% static 'static/css/bootstrap.css' %}" rel="stylesheet">
 	<link rel="stylesheet" href="{% static 'static/css/style.css' %}">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="https://vk.com/js/api/share.js?93" charset="windows-1251"></script>
     <script src="https://vk.com/js/api/openapi.js?139" type="text/javascript"></script>
+    
 </head>
 <body ng-controller="appCtrl">
 {% csrf_token %}
-
-
 <script type="text/javascript">  VK.init({apiId: 5865416});</script>
 <div id="fb-root"></div>
+
     <div class="wrapper">
         <div class="content">
             <ng-view></ng-view>     
@@ -25,31 +26,17 @@
             <div class="seetoo">
                 <h1>Смотрите также:</h1>
                 <div class="container">
-                    <div class="row seetoo-popular">
+                    <div class="row seetoo-popular" randomarticle-dir>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                            <img src="media/images/transport.png" alt="transport" width="100%">
-                            <span>Транспорт</span>/<span>Мальдивы</span><br/>
-                            <span>17/09/16</span>   
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                            <img src="media/images/transport.png" alt="transport" width="100%">
-                            <span>Транспорт</span>/<span>Мальдивы</span><br/>
-                            <span>17/09/16</span>   
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                            <img src="media/images/transport.png" alt="transport" width="100%">
-                            <span>Транспорт</span>/<span>Мальдивы</span><br/>
-                            <span>17/09/16</span>   
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-  
                         </div>
                     </div>
-
+                    <div class="row seetoo-middle"></div>
                     <div class="row seetoo-bottom">
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                            <h1>Metki</h1>
-                            <p><a ng-repeat="mark in marks" href="{{mark.url}}">{{mark.name}}</a></p>
+                            <h1>Метки:</h1>
+                            
+                            <mark-dir class="marks"></mark-dir>
+
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                             <div id="vk_groups" style="position: static;"></div>
@@ -97,6 +84,7 @@
 
 	<script src="{% static 'static/js/build.js' %}"></script>
     <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAfyGgClqYcu0keXcWbVwont0hxoe4DcFA"></script>
+
 
 </body>
 </html>

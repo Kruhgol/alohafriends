@@ -8,7 +8,7 @@
                 <a href="#/article/{{article.url}}"><img ng-src="{{article.picture}}" width="100%" alt="">
             </div>
             <div class="col-lg-5 col-md-6 col-sm-6 col-xs-6 article-text">
-                <a href="#article/{{article.url}}"><h1>{{article.title}}</h1></a><br/>
+                <a href="#/article/{{article.url}}"><h1>{{article.title}}</h1></a><br/>
                 <p>{{article.anatation}}</p><br/>
                 <p class="article-marks">Метки: <a href="#/mark/{{mark.url}}" ng-repeat="mark in article.marks">{{mark.name}}</a></p>
                 <p class="article-author">Автор: <a href="#/author/{{article.authorUrl}}">{{article.author}}</a></p>
@@ -18,8 +18,10 @@
     </div>
 
     <div class="soc-seti-center">
-        <a href=""><div class="sprite vk-center"></div></a>
-        <a href=""><div class="sprite fb-center"></div></a>
-        <a href=""><div class="sprite inst-center"></div></a>
+        <div class="vk-center" fb-dir id="vkShare" picture="{{country.picture}}" name="{{country.title}}" description="Статьи о стране {{country.title}}"></div>
+        <div class="fb-center" fb-dir id="fbShare" picture="{{country.picture}}" name="{{country.title}}" description="Статьи о стране {{country.title}}">
+            <img src="/media/images/fb.png" alt="">
+        </div>
     </div>
+
 </div>

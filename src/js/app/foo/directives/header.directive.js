@@ -10,26 +10,24 @@ module.exports = function($templateCache, $location){
             if($location.path().substring(0,8) == '/country'){
                 document.getElementById("country-name").style.display="block";
 
-                scope.$watch(watchCountryName, function(newValue, oldValue){ 
-                    document.getElementById('header-img').src = newValue.picture;
-                    document.getElementById('header-img').style.marginTop = "40px";
+                scope.$watch('country', function(newValue, oldValue){ 
+                    if(newValue){
+                        document.getElementById('header-img').src = newValue.picture;
+                        document.getElementById('header-img').style.marginTop = "40px";
+                    }
                 });
-
-                function watchCountryName(){
-                    return scope.country;
-                }            
+           
             }
             if($location.path().substring(0,8) == '/article'){
                 document.getElementById("article-name").style.display="block";
 
-                scope.$watch(watchCountryName, function(newValue, oldValue){ 
-                    document.getElementById('header-img').src = newValue.picture;
-                    document.getElementById('header-img').style.marginTop = "40px";
+                scope.$watch('article', function(newValue, oldValue){ 
+                    if(newValue){
+                        document.getElementById('header-img').src = newValue.picture;
+                        document.getElementById('header-img').style.marginTop = "40px";
+                    }
                 });
-
-                function watchCountryName(){
-                    return scope.article;
-                }            
+          
             }
             if($location.path().substring(0,5) == '/mark' 
                 || $location.path().substring(0,7) == '/author'

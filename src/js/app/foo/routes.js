@@ -35,21 +35,7 @@ module.exports = function($routeProvider){
 	.when('/design', {
 		templateUrl: 'design.html'
 	})
-	// .when('/communication',{
-	// 	templateUrl: "templates/communication.html"
-	// })
-	// .when('/about',{
-	// 	templateUrl: "templates/about.html"
-	// })
-	// .when('/map',{
-	// 	templateUrl: "templates/map.html",
-	// 	controller: "mapCtrl"
-	// })	
-	// .when('/mark/:markId',{
-	// 	templateUrl: "templates/mark.html",
-	// 	controller: "markCtrl"
-	// })		
-	// .otherwise({
-	// 	redirectTo: "/home"
-	// });
+	.otherwise({
+		redirectTo: "/home"
+	});
 }
