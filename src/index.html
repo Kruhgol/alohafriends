@@ -10,7 +10,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="text/javascript" src="https://vk.com/js/api/share.js?93" charset="windows-1251"></script>
     <script src="https://vk.com/js/api/openapi.js?139" type="text/javascript"></script>
-    
+    <!-- <script type="text/javascript" src="{% static 'static/js/jquery.js' %}"></script> -->
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <!-- angular-lightbox -->
+    <link rel="stylesheet" href="{% static 'static/css/angular-lightbox.css' %}">   
+    <!-- Added flags -->
+    <link rel="stylesheet" href="{% static 'static/css/flags.css' %}">    
+
 </head>
 <body ng-controller="appCtrl">
 {% csrf_token %}

@@ -1,9 +1,22 @@
 'use strict';
 
-module.exports = function($scope, $http, $location, $routeParams, requestsService){
+module.exports = function($scope, $http, $location, $routeParams, requestsService, languageService){
     // $http.get('/requests/header/').success(function(data){
     //     $scope.countries = data;
     // });
+    $scope.isRuLanguage = languageService.isRuLanguage;
+
+    $scope.changeRuLanguage = function(){
+        languageService.isRuLanguage = true;
+        languageService.isEngLanguage = false;
+        alert(languageService.isEngLanguage);
+    }
+
+    $scope.changeEngLanguage = function(){
+        languageService.isRuLanguage = false;
+        languageService.isEngLanguage = true;
+        $scope.isRuLanguage = languageService.isRuLanguage
+    }
 
     requestsService.getHeader().then(function(result){
         $scope.countries = result.data;

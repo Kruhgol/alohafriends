@@ -4,14 +4,13 @@ module.exports = function($templateCache, $location){
     return {
         link: 
             function(scope, element, attribute){
-
             },
 
         restrict: 'EA',
 
         controller: function($scope, $http, $location, $routeParams, $sce, userConfig, requestsService){
 
-            requestsService.getArticleComments().then(function(result){
+            requestsService.getRandomArticles().then(function(result){
                 $scope.randomArticles = result.data;
             });
 

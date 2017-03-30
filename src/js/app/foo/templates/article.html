@@ -13,38 +13,25 @@
             </div>
             <div class="col-lg-2 col-md-1"></div>
         </div>
-        <div class="article-photos">
+        <div class="article-photos">  
             <div class="row">
-                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-                    <table>
+                <!-- <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12"> -->
+                <!-- before reclame -->
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <table lightbox="article.photos">
                         <tr ng-repeat="tr in imgArray">
                             <td ng-repeat="td in imgArray[$index]">
-                                <div style="background-image: url({{td.src}})" ng-click="photoViwer($event)" data-number="{{td.alt}}"></div>
-                                <!-- <div>
-                                    <img ng-src="{{td.src}}" alt="{{td.alt}}" ng-click="photoViwer($index)" height="100%">
-                                </div> -->
+                                <a href="{{td.src}}" class="lightbox-trigger">
+                                    <div style="background-image: url({{td.src}})" data-number="{{td.alt}}"></div>
+                                </a>
                             </td>
                         </tr>
                     </table>
-                    <!-- <div class="article-photo" ng-repeat="img in article.photos"><img ng-src="{{img}}" alt="" ng-click="photoViwer($index)" width="24%"></div> -->
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <!-- before reclame -->
+<!--                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                     
-                </div>
-            </div>
-        </div>
-
-        <div class="photoviwer" id="photoviwer">
-            <div class="photoviwer-close" ng-click="photoViwerClose()">X</div>
-            <div class="photoviwer-cell">
-                <img src="media/images/left.jpg" width="100%" alt="" ng-click="preview()">
-            </div>
-            <div class="photoviwer-cell">
-                <div id="photoviwer-img"> </div>
-                <!-- <img id="photoviwer-img"> -->
-            </div>
-            <div class="photoviwer-cell">
-                <img src="media/images/right.png" width="100%" alt="" ng-click="next()">
+                </div> -->
             </div>
         </div>
     </div>

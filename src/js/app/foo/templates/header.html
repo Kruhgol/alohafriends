@@ -45,8 +45,16 @@
                 <a href="#"><div class="socseti sprite fb"></div></a>
                 <a href="#"><div class="socseti sprite inst"></div></a>
             </div>
-            <div class="col-lg-1 col-md-1 col-sm-1 hidden-xs menu-cell">
-                <div class="sprite language"></div>
+            <div class="col-lg-1 col-md-1 col-sm-1 hidden-xs menu-cell menu-language">
+                <div>
+                    <i ng-class="isRuLanguage?'flag-RU':'flag-GB'"></i>
+                </div>
+                <div class="menu-list open-menu-list-animation" style="text-align: center;">
+                    <ul class="ul-language">
+                        <li><i class="flag-RU" ng-click="changeRuLanguage()"></i></li>
+                        <li><i class="flag-GB" ng-click="changeEngLanguage()"></i></li>
+                    </ul>
+                </div>
             </div>
             <div class="col-lg-1 hidden-md col-sm-2 col-xs-2"></div>
         </div>  

@@ -62,6 +62,23 @@ header {
             }
         }
 
+        .menu-language {
+            div:first-child {
+                margin-top: 5px;
+                text-align: center;
+            }
+            &:hover div:first-child {
+                display: none;
+            }
+            ul {
+                li:hover {
+                    background-color: #807B7B;
+                    border-radius: 10px;
+                    cursor: pointer;
+                }
+            }
+        }
+
         .menu-cell:hover .menu-list-search {
             display: block;
             position: relative;
@@ -96,6 +113,7 @@ header {
             left: -20px;
             padding: 10px;
             border-radius: 5px;
+            margin-top: 10px;
             ul {
                 li {
                     list-style: none;
