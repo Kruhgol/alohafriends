@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function($templateCache, $location){
+module.exports = function($templateCache, $location, languageService){
     return {
         link: function(scope, element, attribute){
             if($location.path() == '/') {
@@ -41,9 +41,15 @@ module.exports = function($templateCache, $location){
                 menuRow.style.height = '40px';
                 menuRow.style.width = '100%';
             }
-
-
-
+            scope.$watch('dictionary', function(newValue){
+                if (languageService){
+                    if (languageService.isRuLanguage){
+                        document.getElementById("language-flag").classList.add("flag-RU")
+                    } else {
+                        document.getElementById("language-flag").classList.add("flag-GB")
+                    }                    
+                }                
+            })
         },
 
         restrict: 'EA',

@@ -1,13 +1,15 @@
 'use strict';
 
-module.exports = function($scope, $http, $location, $routeParams, $sce, requestsService){
+module.exports = function($scope, $http, $location, $routeParams, $sce, requestsService, languageService){
     
     $scope.articleId = $routeParams.articleId; 
     // var articleRequest = '/article/' + $scope.articleId + '/';
 
     requestsService.getArticle($scope.articleId).then(function(result){
         $scope.article = result.data;
-        $scope.articleText = $sce.trustAsHtml($scope.article.text);
+        $scope.articleText = $sce.trustAsHtml($scope.article[languageService.howLanguage()].text);
+        $scope.article.author = $scope.article[languageService.howLanguage()].author;
+        $scope.article.title = $scope.article[languageService.howLanguage()].title;
         $scope.imgArray = [];
         for(var i=0; i<$scope.article.photos.length/4; i++){
             $scope.imgArray[i] = []

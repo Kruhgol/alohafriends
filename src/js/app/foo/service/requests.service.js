@@ -4,14 +4,14 @@ module.exports = function($http, $rootScope){
 
 function Request($http, $rootScope){
     var article = '/article/';
-        author = '/athor/',
+        author = '/author/',
         requestsUrl = '/requests',
         comments = '/comments/',
         articles = '/articles/',
         country = '/country/',
         header = '/header/',
         searchMark = '/searchMark/',
-        mark = '/mark',
+        mark = '/mark/',
         marks = '/marks/',
         randomArticles = '/randomArticles/';
 

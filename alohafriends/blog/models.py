@@ -18,7 +18,10 @@ class Country(models.Model):
     class Meta:
         db_table = "country"
     country_title = models.CharField(max_length=200)
-    country_url = models.CharField(max_length=50, help_text='Название на английском')
+    #add english
+    country_title_eng = models.CharField(max_length=200)
+
+    country_url = models.CharField(max_length=50, help_text='Название для URL. exemple - name_of_url')
     country_picture = models.ImageField(null=True, upload_to='images', verbose_name='photo')
 
     def __unicode__(self):
@@ -42,7 +45,10 @@ class Author(models.Model):
     class Meta:
         db_table = "author"
     article_author = models.CharField(max_length=200)
-    article_authorUrl = models.CharField(max_length=200)  
+    #add english
+    article_author_eng = models.CharField(max_length=200)
+
+    article_authorUrl = models.CharField(max_length=200, help_text='exemple - name_of_url')  
     def __unicode__(self):
         return self.article_author 
 
@@ -50,9 +56,18 @@ class Article(models.Model):
     class Meta:
         db_table = "artice"
     article_title = models.CharField(max_length=200)
-    article_url = models.CharField(max_length=50, help_text='Название на английском')
+
+    article_title_eng = models.CharField(max_length=200)
+
+    article_url = models.CharField(max_length=50, help_text='exemple - name_of_url')
     article_text = models.TextField()
+
+    article_text_eng = models.TextField()
+
     article_anatation = models.TextField(null=True, help_text='краткое описание')
+
+    article_anatation_eng = models.TextField(null=True, help_text='short describtion')
+
     article_date = models.DateTimeField()
     article_album = models.ForeignKey(Album, null=True)
     article_country = models.ForeignKey(Country, null=True)
@@ -77,7 +92,10 @@ class Mark(models.Model):
     class Meta:
         db_table = "mark"
     mark_name = models.CharField(max_length=200)
-    mark_url = models.CharField(max_length=50, help_text='Название на английском')
+
+    mark_name_eng = models.CharField(max_length=200)
+
+    mark_url = models.CharField(max_length=50, help_text='exemple - name_of_url')
     mark_article = models.ManyToManyField(Article)
 
     def __unicode__(self):

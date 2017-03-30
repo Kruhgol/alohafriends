@@ -1,11 +1,11 @@
 <div class="comments-wrapper">
-    <h1>Оставить комментарии:</h1>
+    <h1>{{dictionary.leaveComment}}:</h1>
     <form name="comment-form">
         <p ng-show="userConfig.isAuth"><span>{{userConfig.first_name}} {{userConfig.last_name}}:</span></p>
-        <textarea placeholder="Введите коментарий" ng-model="answer.text" ng-click=" authVisible=1"></textarea></br>
-        <input type="submit" value="Оставить комментарий" ng-click="sendComment(answer)" ng-disabled="!userConfig.isAuth">
+        <textarea placeholder="{{dictionary.sendComment}}" ng-model="answer.text" ng-click=" authVisible=1"></textarea></br>
+        <input type="submit" value="{{dictionary.sendComment}}" ng-click="sendComment(answer)" ng-disabled="!userConfig.isAuth">
     </form>
-    <h1>Комментарии:</h1>
+    <h1>{{dictionary.comments}}:</h1>
 
     <div class="container">
         <div class="row comment-row" ng-repeat="comment in c track by $index">

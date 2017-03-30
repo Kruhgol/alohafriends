@@ -26,30 +26,20 @@ def randomArticle(request):
     print '____randomArticle____'
     r = []
     for i in range(3):
-        print '___' 
-        print i
         randomNumber =  int(random()*(len(articles)));
         article = articles[randomNumber]
         o = {}
-        o['title'] = article.article_title
+        o['ru']={}
+        o['eng']={}
+        o['ru']['title'] = article.article_title
+        o['eng']['title'] = article.article_title_eng
         o['url'] = article.article_url
         o['picture'] = article.article_album.photo_set.all()[0].photo_place.url
-        o['data'] = json.dumps(article.article_date.strftime("%Y-%m-%d %H:%M:%S"))
-        o['country'] = article.article_country.country_title
+        o['date'] = json.dumps(article.article_date.strftime("%Y-%m-%d %H:%M:%S"))
+        o['ru']['country'] = article.article_country.country_title
+        o['eng']['country'] = article.article_country.country_title_eng
         o['random'] = randomNumber
         r.append(o)
-    res = json.dumps(r)
-    return HttpResponse(res)
-
-def searchMark(request):
-    if 'text' in request.POST:
-        print request.POST['text']
-    r = {}
-    if Mark.objects.all().filter(mark_name = request.POST['text']):
-        r['status'] = True
-        r['mark'] = Mark.objects.get(mark_name = request.POST['text']).mark_url
-    else:
-        r['status'] = False
     res = json.dumps(r)
     return HttpResponse(res)
 
@@ -92,30 +82,38 @@ def addComment(request, article):
         # print '______________________create new comment_______________'
 
 def mark(request,mark):
-    print '_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*'
     m = Mark.objects.get(mark_url = mark)
-    print 'mark ' + mark
-    print m
     a = m.mark_article.all()
-    print a
     r = {}
-    r['mark_name'] = m.mark_name
+    r['ru'] = {}
+    r['eng'] = {}
+    r['ru']['mark_name'] = m.mark_name
+    r['eng']['mark_name'] = m.mark_name_eng
     r['mark_url'] = m.mark_url
     r['articles'] = []
     for i in a:
         o = {}
-        o['title'] = i.article_title
+        o['ru'] = {}
+        o['eng'] = {}
+        o['ru']['title'] = i.article_title
+        o['eng']['title'] = i.article_title_eng
         o['url'] = i.article_url
-        o['text'] = i.article_text
-        o['anatation'] = i.article_anatation
+        o['ru']['text'] = i.article_text
+        o['eng']['text'] = i.article_text_eng
+        o['ru']['anatation'] = i.article_anatation
+        o['eng']['anatation'] = i.article_anatation_eng
         o['picture'] = i.article_album.photo_set.all()[0].photo_place.url
-        o['author'] = i.article_author.article_author
+        o['ru']['author'] = i.article_author.article_author
+        o['eng']['author'] = i.article_author.article_author_eng
         o['authorUrl'] = i.article_author.article_authorUrl
         if i.mark_set.all() :
             arr=[]
             for j in i.mark_set.all():
                 obj = {}
-                obj['name'] = j.mark_name
+                obj['ru'] = {}
+                obj['eng'] = {}
+                obj['ru']['name'] = j.mark_name
+                obj['eng']['name'] = j.mark_name_eng
                 obj['url'] = j.mark_url
                 arr.append(obj)
             o['marks'] = arr
@@ -127,23 +125,35 @@ def author(request,author):
     m = Author.objects.get(article_authorUrl = author)
     a = m.article_set.all()     #ischet vse svyazannire s nim obiekti
     r = {}
-    r['author'] = m.article_author
+    r['ru'] = {}
+    r['eng'] = {}
+    r['ru']['author'] = m.article_author
+    r['ru']['author'] = m.article_author_eng
     r['authorUrl'] = m.article_authorUrl
     r['articles'] = []
     for i in a:
         o = {}
-        o['title'] = i.article_title
+        o['ru'] = {}
+        o['eng'] = {}
+        o['ru']['title'] = i.article_title
+        o['eng']['title'] = i.article_title_eng
         o['url'] = i.article_url
-        o['text'] = i.article_text
-        o['anatation'] = i.article_anatation
+        o['ru']['text'] = i.article_text
+        o['eng']['text'] = i.article_text_eng
+        o['ru']['anatation'] = i.article_anatation
+        o['eng']['anatation'] = i.article_anatation_eng
         o['picture'] = i.article_album.photo_set.all()[0].photo_place.url
-        o['author'] = i.article_author.article_author
+        o['ru']['author'] = i.article_author.article_author
+        o['eng']['author'] = i.article_author.article_author_eng
         o['authorUrl'] = i.article_author.article_authorUrl
         if i.mark_set.all() :
             arr=[]
             for j in i.mark_set.all():
                 obj = {}
-                obj['name'] = j.mark_name
+                obj['ru'] = {}
+                obj['eng'] = {}
+                obj['ru']['name'] = j.mark_name
+                obj['eng']['name'] = j.mark_name_eng
                 obj['url'] = j.mark_url
                 arr.append(obj)
             o['marks'] = arr
@@ -179,17 +189,24 @@ def video(request):
     print res
     return HttpResponse(res);
 
+
 def article(request,article):
     a = Article.objects.get(article_url = article)
     author = a.article_author
     r = {}
-    r['title'] = a.article_title
+    r['ru'] = {}
+    r['eng'] = {}
+    r['ru']['title'] = a.article_title
+    r['eng']['title'] = a.article_title_eng
     r['url'] = a.article_url
-    r['text'] = a.article_text
-    r['anatation'] = a.article_anatation
+    r['ru']['text'] = a.article_text
+    r['eng']['text'] = a.article_text_eng
+    r['ru']['anatation'] = a.article_anatation
+    r['eng']['anatation'] = a.article_anatation_eng
     r['picture'] = a.article_picture.url
     r['data'] = json.dumps(a.article_date.strftime("%Y-%m-%d %H:%M:%S"))
-    r['author'] = author.article_author
+    r['ru']['author'] = author.article_author
+    r['eng']['author'] = author.article_author_eng
     r['authorUrl'] = author.article_authorUrl
     r['photos'] = []
     l = list(a.article_album.photo_set.all())
@@ -217,7 +234,10 @@ def comments(request, article):
 def country(request, country):
     c = Country.objects.get(country_url = country)
     r = {}
-    r['title'] = c.country_title
+    r['ru'] = {}
+    r['eng'] = {}
+    r['ru']['title'] = c.country_title
+    r['eng']['title'] = c.country_title_eng
     r['url'] = c.country_url
     r['picture'] = c.country_picture.url
     res = json.dumps(r)
@@ -229,18 +249,27 @@ def articles(request, country):
     r = []
     for i in articles:
         o={}
-        o['title'] = i.article_title
+        o['ru'] = {}
+        o['eng'] = {}
+        o['ru']['title'] = i.article_title
+        o['eng']['title'] = i.article_title_eng
         o['url'] = i.article_url
-        o['text'] = i.article_text
-        o['anatation'] = i.article_anatation
+        o['ru']['text'] = i.article_text
+        o['eng']['text'] = i.article_text_eng
+        o['ru']['anatation'] = i.article_anatation
+        o['eng']['anatation'] = i.article_anatation_eng
         o['picture'] = i.article_album.photo_set.all()[0].photo_place.url
-        o['author'] = i.article_author.article_author
+        o['ru']['author'] = i.article_author.article_author
+        o['eng']['author'] = i.article_author.article_author_eng
         o['authorUrl'] = i.article_author.article_authorUrl
         if i.mark_set.all() :
             arr=[]
             for j in i.mark_set.all():
                 obj = {}
-                obj['name'] = j.mark_name
+                obj['ru'] = {}
+                obj['eng'] = {}
+                obj['ru']['name'] = j.mark_name
+                obj['eng']['name'] = j.mark_name_eng
                 obj['url'] = j.mark_url
                 arr.append(obj)
             o['marks'] = arr
@@ -250,26 +279,29 @@ def articles(request, country):
     return HttpResponse(res)
 
 
-def countries(request):
-    print "______country___________"
-    coun = Country.objects.all()
-    r = []
-    for c in coun:
-        o = {}
-        o['title'] = c.country_title
-        o['url'] = c.country_url
-        o['picture'] = c.country_picture.url
-        r.append(o)
-    res = json.dumps(r)
-    print res
-    return HttpResponse(res)
+# def countries(request):
+#     print "______country___________"
+#     coun = Country.objects.all()
+#     r = []
+#     for c in coun:
+#         o = {}
+#         o['title'] = c.country_title
+#         o['url'] = c.country_url
+#         o['picture'] = c.country_picture.url
+#         r.append(o)
+#     res = json.dumps(r)
+#     print res
+#     return HttpResponse(res)
 
 def marks(request):
     marks = Mark.objects.all()
     r = []
     for m in marks:
         o = {}
-        o['name'] = m.mark_name
+        o['ru'] = {}
+        o['eng'] = {}
+        o['ru']['name'] = m.mark_name
+        o['eng']['name'] = m.mark_name_eng
         o['url'] = m.mark_url
         # o['link'] = m.mark_article.get().article_url
         r.append(o)
@@ -282,8 +314,30 @@ def header(requests):
     r = []
     for c in coun:
         o = {}
-        o['title'] = c.country_title
+        o['ru'] = {}
+        o['eng'] = {}
+        o['ru']['title'] = c.country_title
+        o['eng']['title'] = c.country_title_eng
         o['url'] = c.country_url
         r.append(o)
+    res = json.dumps(r)
+    return HttpResponse(res)
+
+
+
+
+
+def searchMark(request):
+    if 'text' in request.POST:
+        print request.POST['text']
+    r = {}
+    if Mark.objects.all().filter(mark_name = request.POST['text']):
+        r['status'] = True
+        r['mark'] = Mark.objects.get(mark_name = request.POST['text']).mark_url
+    if Mark.objects.all().filter(mark_name_eng = request.POST['text']):
+        r['status'] = True
+        r['mark'] = Mark.objects.get(mark_name_eng = request.POST['text']).mark_url
+    else:
+        r['status'] = False
     res = json.dumps(r)
     return HttpResponse(res)

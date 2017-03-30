@@ -11,7 +11,19 @@ class CommentInline(admin.StackedInline):
     extra = 1
 
 class ArticleAdmin(admin.ModelAdmin):
-    fields = ['article_title', 'article_url', 'article_text', 'article_anatation', 'article_date', 'article_album', 'article_country', 'article_picture', 'article_author']
+    fields = [  'article_title',
+                'article_title_eng', 
+                'article_url', 
+                'article_text',
+                'article_text_eng', 
+                'article_anatation',
+                'article_anatation_eng', 
+                'article_date', 
+                'article_album', 
+                'article_country', 
+                'article_picture', 
+                'article_author'
+            ]
     inlines = [CommentInline]
 
 class PhotoAdmin(admin.ModelAdmin):
@@ -26,10 +38,10 @@ class AlbumAdmin(admin.ModelAdmin):
     inlines = [PhotoInline]
 
 class CountryAdmin(admin.ModelAdmin):
-    fields = ['country_title', 'country_url','country_picture']
+    fields = ['country_title', 'country_title_eng', 'country_url','country_picture']
 
 class MarkAdmin(admin.ModelAdmin):
-    fields = ['mark_name', 'mark_url', 'mark_article']
+    fields = ['mark_name', 'mark_name_eng', 'mark_url', 'mark_article']
 
 class VideoAdmin(admin.ModelAdmin):
     fields = ['video_title', 'video_url', 'video_iframe', 'video_text', 'video_country']
@@ -38,7 +50,7 @@ class MarkerAdmin(admin.ModelAdmin):
     fields = ['marker_title','marker_latitude','marker_longitude']
 
 class AuthorAdmin(admin.ModelAdmin):
-    fields = ['article_author', 'article_authorUrl']
+    fields = ['article_author', 'article_author_eng', 'article_authorUrl']
 
 admin.site.register(Article, ArticleAdmin)
 admin.site.register(Photo, PhotoAdmin)
