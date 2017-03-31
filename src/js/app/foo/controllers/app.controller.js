@@ -9,20 +9,15 @@ module.exports = function($scope,
                           languageService){
 
     languageService.language();
+    $scope.dictionary = languageService.dictionary;
     $scope.ruLanguage = languageService.isRuLanguage;
+    $scope.isRu = true;
 
-    // $scope.$watch('homeEngContent', function(){
-    //   alert("rulanguage in App");
-    //   $scope.dictionary = languageService.dictionary;
-    //   $scope.homeRuContent = languageService.isRuLanguage;
-    //   $scope.homeEngContent = languageService.isEngLanguage;
-    // })
-    
-    
-    // $scope.$watch('isRuLanguage', function(newValue){
-    //     alert('change!!!!');
-    //     languageService.isRuLanguage ? $scope.dictionary = dictionaryService.ru : $scope.dictionary = dictionaryService.eng;
-    // })
+    $scope.$on('changeLanguage', function(event, arg){
+      $scope.dictionary = arg.dictionary;
+      $scope.isRu = arg.isRu;
+      $scope.$digest();
+    });
 
     requestsService.getMarks().then(function(result){
         $scope.marks = result.data;

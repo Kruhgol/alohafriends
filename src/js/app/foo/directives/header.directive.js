@@ -32,7 +32,8 @@ module.exports = function($templateCache, $location, languageService){
             if($location.path().substring(0,5) == '/mark' 
                 || $location.path().substring(0,7) == '/author'
                 || $location.path().substring(0,7) == '/design'
-                || $location.path().substring(0,4) == '/map'){
+                || $location.path().substring(0,4) == '/map'
+                || $location.path().substring(0,9) == '/contacts'){
                 var menuRow = document.getElementById('menu-row');
                 //menuRow.style.backgroundColor = 'grey';
                 menuRow.style.borderBottom = 'solid 1px #000000';

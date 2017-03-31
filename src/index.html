@@ -28,9 +28,9 @@
             <ng-view></ng-view>     
         </div>
         <div class="footer">
-
             <div class="seetoo">
-                <h1>Смотрите также:</h1>
+                <h1 ng-show="isRu">Смотрите также:</h1>
+                <h1 ng-show="!isRu">SeeToo:</h1>
                 <div class="container">
                     <div class="row seetoo-popular" randomarticle-dir>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
@@ -39,10 +39,14 @@
                     <div class="row seetoo-middle"></div>
                     <div class="row seetoo-bottom">
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                            <h1>Метки:</h1>
-                            
+                            <h1 ng-show="isRu">Метки:</h1>
+                            <h1 ng-show="!isRu">Marks:</h1>
+
                             <mark-dir class="marks"></mark-dir>
 
+                        </div>
+                        <div class="hidden-lg hidden-md col-sm-6 col-xs-12">    
+                            
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                             <div id="vk_groups" style="position: static;"></div>
@@ -52,9 +56,10 @@
                             <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Falohafriendss&tabs=timeline&width=250&height=200&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="250" height="300px" style="border:none;overflow:hidden;margin-top: 30px" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12"> 
-                             <iframe src="//widget.instagramm.ru/?imageW=2&imageH=2&thumbnail_size=117&type=0&typetext=alohafriendss_&head_show=1&profile_show=1&shadow_show=1&bg=ffffff&head_bg=46729b&subscribe_bg=ad4141&border_color=c3c3c3" allowtransparency="true" frameborder="0" scrolling="no" style="border:none;overflow:hidden;width:260px;height:526px;"></iframe>
+                             <br/>
+                             <iframe src="//widget.instagramm.ru/?imageW=2&imageH=3&thumbnail_size=117&type=0&typetext=alohafriendss_&head_show=1&profile_show=1&shadow_show=1&bg=ffffff&head_bg=46729b&subscribe_bg=ad4141&border_color=c3c3c3" allowtransparency="true" frameborder="0" scrolling="no" style="border:none;overflow:hidden;width:260px;height:726px;"></iframe>
                         </div>
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">    
+                        <div class="col-lg-3 col-md-3 hidden-sm hidden-xs">    
                             
                         </div>
                     </div>
@@ -82,6 +87,66 @@
                 </table>
             </div>
         
+        </div>
+        <div class="footer-mobile">
+            <div class="container-fluid">
+                        
+                <div class="row seetoo-popular" randomarticle-dir>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <br/>
+                    <div class="col-sm-12 marks">
+                            <h1 ng-show="isRu">Метки:</h1>
+                            <h1 ng-show="!isRu">Marks:</h1>
+
+                            <mark-dir class="marks"></mark-dir>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 text-center">
+                        <div id="vk_groups2" style="position: static; margin: auto;"></div>
+                        <script type="text/javascript">
+                        VK.Widgets.Group("vk_groups2", {mode: 0, width: "250", height: "300px"}, 59665172);
+                        </script>
+                        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Falohafriendss&tabs=timeline&width=250&height=200&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="250" height="300px" style="border:none;overflow:hidden;margin-top: 30px" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 text-center">
+                        <iframe src="//widget.instagramm.ru/?imageW=2&imageH=2&thumbnail_size=117&type=0&typetext=alohafriendss_&head_show=1&profile_show=1&shadow_show=1&bg=ffffff&head_bg=46729b&subscribe_bg=ad4141&border_color=c3c3c3" allowtransparency="true" frameborder="0" scrolling="no" style="border:none;overflow:hidden;width:260px;height:726px;"></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-about">
+                <table>
+                    <tr>
+                        <td>@ #Alohafriends</td>
+                        <td>
+                            <div class="socseti sprite vk"></div>
+                            <div class="socseti sprite fb"></div>
+                            <div class="socseti sprite inst"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>При копировании материалов с данного сайта ссылка на источник обязательна</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Сайт размещен на хостинге <a href="#">mchost.ru</a></td>
+                        <td>created by <a href="#">Nikolay Krugol</a></td>
+                    </tr>
+                </table>
+            </div>
+
         </div>
         <div class="footer-line"></div>
     </div>

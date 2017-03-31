@@ -7,35 +7,47 @@ module.exports = function($scope,
                           $rootScope, 
                           requestsService, 
                           languageService){
-    // $http.get('/requests/header/').success(function(data){
-    //     $scope.countries = data;
-    // });
-    // $scope.isRuLanguage = languageService.isRuLanguage;
-    console.log($scope.dictionary);
+
     $scope.changeRuLanguage = function(){
         languageService.isRuLanguage = true;
         languageService.isEngLanguage = false;
         languageService.language();
-        $scope.dictionary = languageService.dictionary;
-        window.location.assign('#/');
+
+        $rootScope.$broadcast('changeLanguage', {
+            dictionary: languageService.dictionary,
+            isRu: true,
+        })
+
+        if(window.location == 'http://127.0.0.1:8000/#/'){
+            window.location.assign('#/relink/');
+        } else {
+            window.location.assign('#/');
+        }
     }
 
     $scope.changeEngLanguage = function(){
         languageService.isRuLanguage = false;
         languageService.isEngLanguage = true;
         languageService.language();
-        $scope.dictionary = languageService.dictionary;
-        window.location.assign('#/');
+
+        $rootScope.$broadcast('changeLanguage', {
+            dictionary: languageService.dictionary,
+            isRu: false,
+        })
+
+        if(window.location == 'http://127.0.0.1:8000/#/'){
+            window.location.assign('#/relink/');
+        } else {
+            window.location.assign('#/');
+        }
     }
 
-    $scope.$watch('dictionary', function(newValue){
-        console.log($scope.dictionary);
-        console.log(languageService);
-        $scope.dictionary = languageService.dictionary;
-        $scope.homeRuContent = languageService.isRuLanguage;
-        $scope.homeEngContent = languageService.isEngLanguage;
-        $scope.homeEngContent = true;
-    });
+    // $scope.$watch('dictionary', function(newValue){
+    //     $scope.dictionary = languageService.dictionary;
+    //     $scope.homeRuContent = languageService.isRuLanguage;
+    //     $scope.homeEngContent = languageService.isEngLanguage;
+    //     $scope.homeEngContent = true;
+    // });
 
     requestsService.getHeader().then(function(result){
         $scope.countries = result.data;

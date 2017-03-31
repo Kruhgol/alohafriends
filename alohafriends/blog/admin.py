@@ -52,6 +52,7 @@ class MarkerAdmin(admin.ModelAdmin):
 class AuthorAdmin(admin.ModelAdmin):
     fields = ['article_author', 'article_author_eng', 'article_authorUrl']
 
+
 admin.site.register(Article, ArticleAdmin)
 admin.site.register(Photo, PhotoAdmin)
 admin.site.register(Album, AlbumAdmin)

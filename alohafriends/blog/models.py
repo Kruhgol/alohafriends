@@ -118,4 +118,4 @@ class Marker(models.Model):
     marker_longitude = models.CharField(max_length=50, help_text='долгота')
     
     def __unicode__(self):
-        return self.marker_title
+        return self.marker_title  

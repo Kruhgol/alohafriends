@@ -35,7 +35,11 @@ module.exports = function($routeProvider){
 	.when('/design', {
 		templateUrl: 'design.html'
 	})
+	.when('/relink', {
+		templateUrl: 'home.html',
+		controller: 'relinkCtrl'
+	})
 	.otherwise({
-		redirectTo: "/home"
+		redirectTo: "/"
 	});
 }

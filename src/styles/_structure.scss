@@ -11,6 +11,9 @@ body {
         .content {
             padding-bottom: 1210px;  
             margin: auto;
+            @include respond-to(mobile){
+                padding-bottom: 10px;
+            }
         }   
 
         .footer {
@@ -20,6 +23,15 @@ body {
             width: 100%;
             height: 1080px;
             background-color: #ffffff;
+            @include respond-to(mobile){
+                display: none;
+            }
+        }
+        .footer-mobile {
+            display: none;
+            @include respond-to(mobile){
+                display: block;
+            }            
         }
     }
 }

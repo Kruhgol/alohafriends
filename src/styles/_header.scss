@@ -64,7 +64,7 @@ header {
 
         .menu-language {
             div:first-child {
-                margin-top: 5px;
+                margin-top: 10px;
                 text-align: center;
             }
             &:hover div:first-child {
@@ -168,7 +168,7 @@ header {
                 margin-left: 10%;
             }
             a:hover{
-                color: $menuTextColor;
+                color: #B3B0B0;
                 cursor: pointer;
             }
         }

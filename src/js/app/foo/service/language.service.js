@@ -43,7 +43,7 @@ module.exports = {
             map: 'Map',
             projects: 'Projects',
             partners: 'Partners',
-            communication: 'Communication',
+            communication: 'Contacts',
             seeToo: 'See too',
             marks: 'Marks',
             footerCopy: '',

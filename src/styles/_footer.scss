@@ -20,7 +20,6 @@
                         font-family: $Engine;
                         text-decoration: none;
                         font-size: 18px;
-                        color: red;
                     }
                 }
             }
@@ -125,4 +124,79 @@
     @include respond-to(mobile){
         display: none;
     } 
+}
+
+
+.footer-mobile {
+    margin-top: 50px;
+    .seetoo-popular {
+            .random-article {
+                a {
+                    &:hover {
+                        text-decoration: none;
+                    }
+                    span {
+                        font-family: $Engine;
+                        text-decoration: none;
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+
+    .footer-about {
+        width: 1200px;
+        max-width: 100%;
+        margin: auto;
+        position: relative;
+
+
+        table {
+            width: 100%;
+            /*background-color: #a1a1a4;*/
+            @include respond-to(medium){
+                border-top: solid 3px #080808;
+            }
+            @include respond-to(tablet){
+                border-top: solid 3px #080808;
+            }
+            @include respond-to(mobile){
+                border-top: solid 3px #080808;
+            }
+            td {
+                height: 30px;
+            }
+            tr:nth-child(1){
+                td:nth-child(2) {
+                    div {
+                        float: right;
+                    }
+                }
+            } 
+            tr:nth-child(3) {
+                text-align: right;
+            }
+        }
+    }
+    .marks {
+        margin-bottom: 100px;
+        margin-top: 50px;
+        h1 {
+            font-size: 18px;
+        }
+        p {
+            word-wrap: break-word;
+            /*line-height: 60px;*/
+            /*vertical-align: text-bottom;*/
+            a {
+                margin-right: 10px;
+                vertical-align: middle;
+                font-family: $Engine;
+            }
+            a:hover {
+                text-decoration: none;
+                font-weight: bold;
+            }
+        }
+    }    
 }
