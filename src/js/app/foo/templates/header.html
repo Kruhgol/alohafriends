@@ -14,7 +14,7 @@
             </div>
             <div class="col-lg-1 col-md-1 col-sm-1 hidden-xs menu-cell text-center">
                 <span>{{dictionary.journal}}</span>
-                <div class="menu-list open-menu-list-animation">
+                <div class="menu-list">
                     <ul>
                         <li ng-repeat="country in countries"><a href="#/country/{{country.url}}">{{country.title}}</a></li>
                     </ul>
@@ -34,7 +34,7 @@
             </div>
             <div class="col-lg-1 col-md-1 col-sm-1 hidden-xs menu-cell text-center">
                 <div class="sprite search" style="margin-left: 70%"></div>
-                <div class="menu-list-search open-menu-list-animation">
+                <div class="menu-list-search">
                     <form name="search">
                         <input type="text" placeholder="Что ищем?" ng-model="markSearch.text">
                         <input type="button" value="search" ng-click="getSearch(markSearch)">
@@ -50,7 +50,7 @@
                 <div>
                     <i id="language-flag"></i>
                 </div>
-                <div class="menu-list open-menu-list-animation" style="text-align: center;">
+                <div class="menu-list" style="text-align: center;">
                     <ul class="ul-language">
                         <li><i class="flag-RU" ng-click="changeRuLanguage()"></i></li>
                         <li><i class="flag-GB" ng-click="changeEngLanguage()"></i></li>

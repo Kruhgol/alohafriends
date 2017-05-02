@@ -21,7 +21,7 @@ class Country(models.Model):
     #add english
     country_title_eng = models.CharField(max_length=200)
 
-    country_url = models.CharField(max_length=50, help_text='Название для URL. exemple - name_of_url')
+    country_url = models.CharField(max_length=50, help_text='name for URL. exemple - name_of_url')
     country_picture = models.ImageField(null=True, upload_to='images', verbose_name='photo')
 
     def __unicode__(self):

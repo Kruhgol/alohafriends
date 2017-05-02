@@ -19,11 +19,10 @@ from random import random
 #     res = json.dumps(r)
 #     return HttpResponse(res)
 def sicret(request):
-    print 'hello'
+    return 'ok'
 
 def randomArticle(request):
     articles = Article.objects.all();
-    print '____randomArticle____'
     r = []
     for i in range(3):
         randomNumber =  int(random()*(len(articles)));
@@ -45,11 +44,7 @@ def randomArticle(request):
 
 def addComment(request, article):
     a = Article.objects.get(article_url = article)
-    print a.article_url
-    print request.POST
-    print request.POST['text']
     if 'text' in request.POST:
-        print '_____est______'
         text = request.POST['text']
         first_name = request.POST['first_name']
         last_name = request.POST['last_name']
@@ -186,7 +181,6 @@ def video(request):
         o['iframe'] = i.video_iframe
         r.append(o)
     res = json.dumps(r)
-    print res
     return HttpResponse(res);
 
 
@@ -328,8 +322,6 @@ def header(requests):
 
 
 def searchMark(request):
-    if 'text' in request.POST:
-        print request.POST['text']
     r = {}
     if Mark.objects.all().filter(mark_name = request.POST['text']):
         r['status'] = True

@@ -1,0 +1,104 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en" ng-app="AlohaFriends">
+<head>
+	<meta charset="UTF-8">
+	<title>Aloha, friends !</title>
+	<link href="{% static 'static/css/bootstrap.css' %}" rel="stylesheet">
+	<link rel="stylesheet" href="{% static 'static/css/style.css' %}">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://vk.com/js/api/openapi.js?139" type="text/javascript"></script>
+</head>
+<body ng-controller="appCtrl">
+{% csrf_token %}
+
+
+<script type="text/javascript">  VK.init({apiId: 5865416});</script>
+<div id="fb-root"></div>
+    <div class="wrapper">
+        <div class="content">
+            <ng-view></ng-view>     
+        </div>
+        <div class="footer">
+
+            <div class="seetoo">
+                <h1>Смотрите также:</h1>
+                <div class="container">
+                    <div class="row seetoo-popular">
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                            <img src="media/images/transport.png" alt="transport" width="100%">
+                            <span>Транспорт</span>/<span>Мальдивы</span><br/>
+                            <span>17/09/16</span>   
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                            <img src="media/images/transport.png" alt="transport" width="100%">
+                            <span>Транспорт</span>/<span>Мальдивы</span><br/>
+                            <span>17/09/16</span>   
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                            <img src="media/images/transport.png" alt="transport" width="100%">
+                            <span>Транспорт</span>/<span>Мальдивы</span><br/>
+                            <span>17/09/16</span>   
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+  
+                        </div>
+                    </div>
+                    <div class="row seetoo-middle"></div>
+                    <div class="row seetoo-bottom">
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <h1>Метки:</h1>
+                            
+                            <mark-dir class="marks"></mark-dir>
+
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <div id="vk_groups" style="position: static;"></div>
+                            <script type="text/javascript">
+                            VK.Widgets.Group("vk_groups", {mode: 0, width: "250", height: "300px"}, 59665172);
+                            </script>
+                            <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Falohafriendss&tabs=timeline&width=250&height=200&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="250" height="300px" style="border:none;overflow:hidden;margin-top: 30px" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12"> 
+                             <iframe src="//widget.instagramm.ru/?imageW=2&imageH=2&thumbnail_size=117&type=0&typetext=alohafriendss_&head_show=1&profile_show=1&shadow_show=1&bg=ffffff&head_bg=46729b&subscribe_bg=ad4141&border_color=c3c3c3" allowtransparency="true" frameborder="0" scrolling="no" style="border:none;overflow:hidden;width:260px;height:526px;"></iframe>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">    
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-about">
+                <table>
+                    <tr>
+                        <td>@ #Alohafriends</td>
+                        <td>
+                            <div class="socseti sprite vk"></div>
+                            <div class="socseti sprite fb"></div>
+                            <div class="socseti sprite inst"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>При копировании материалов с данного сайта ссылка на источник обязательна</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Сайт размещен на хостинге <a href="#">mchost.ru</a></td>
+                        <td>created by <a href="#">Nikolay Krugol</a></td>
+                    </tr>
+                </table>
+            </div>
+        
+        </div>
+        <div class="footer-line"></div>
+    </div>
+    
+
+
+	<script src="{% static 'static/js/build.js' %}"></script>
+    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAfyGgClqYcu0keXcWbVwont0hxoe4DcFA"></script>
+
+</body>
+</html>
