@@ -27,8 +27,6 @@ module.exports = function($scope, $http, $location, $routeParams, requestsServic
             $scope.articles[i].text = $scope.articles[i][languageService.howLanguage()].text;
             $scope.articles[i].anatation = $scope.articles[i][languageService.howLanguage()].anatation;
             $scope.articles[i].author = $scope.articles[i][languageService.howLanguage()].author;
-            console.log($scope.articles[i].title);
-            console.log('222');
             for(var j=0; j<$scope.articles[i].marks.length; j++){
                 $scope.articles[i].marks[j].name = $scope.articles[i].marks[j][languageService.howLanguage()].name;
             }

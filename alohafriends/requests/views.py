@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from blog.models import Country, Article, Album, Photo, Mark, Video, Marker, Comment, Author
+from blog.models import Country, Article, Album, Photo, Mark, Video, Marker, Comment, Author, Map
 from django.http import HttpResponse
 import json
 from django.http import JsonResponse
@@ -157,15 +157,20 @@ def author(request,author):
     return HttpResponse(res)
 
 def map(request):
-    m = Marker.objects.all()
-    m = list(m)
-    r = []
-    for i in m:
-        o = {}
-        o['title'] = i.marker_title
-        o['Lat'] = i.marker_latitude
-        o['Lng'] = i.marker_longitude
-        r.append(o)
+    m = Map.objects.all()
+    r = {}
+    r['eng'] = []
+    r['ru'] = []
+    if m:
+        for i in m:
+            ru = {}
+            eng = {}
+            eng['date'] = i.map_date
+            eng['text'] = i.map_text_eng
+            ru['date'] = i.map_date
+            ru['text'] = i.map_text
+            r['eng'].append(eng)
+            r['ru'].append(ru)
     res = json.dumps(r)
     return HttpResponse(res)
 

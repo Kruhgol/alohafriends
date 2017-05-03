@@ -34,7 +34,8 @@ module.exports = {
             leaveComment : 'Оставить комментарий',
             comments: 'Комментарии',
             sendComment: 'Отправить комментарий',
-            putComment: 'Введите комментарий'
+            putComment: 'Введите комментарий',
+            forComment: 'Для того чтобы оставить комментарии на сайте, пожалуйста авторизуйтесь.'
 
 
         },
@@ -53,7 +54,8 @@ module.exports = {
             leaveComment: 'leave a comment',
             comments: 'Comments',
             sendComment: 'Send comment',
-            putComment: 'Put in comment'
+            putComment: 'Put in comment',
+            forComment: 'In order to leave a comment you must log in.'
 
         }
     }

@@ -25,8 +25,12 @@ module.exports = function($templateCache, $location){
                 
 
 
+                // window.fbAsyncInit = function() {
+                //     FB.init({appId: '361660487549516', status: true, cookie: true,
+                //     xfbml: true});
+                // };
                 window.fbAsyncInit = function() {
-                    FB.init({appId: '361660487549516', status: true, cookie: true,
+                    FB.init({appId: '417325898654737', status: true, cookie: true,
                     xfbml: true});
                 };
 

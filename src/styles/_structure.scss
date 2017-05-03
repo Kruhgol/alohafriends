@@ -1,15 +1,14 @@
 body {
-    height: 100%;
+    
     background-color: #ffffff;
-
     .wrapper {
         position: relative;
-        min-height: 100%;
+        /*min-height: 100%;*/
         background-color: #ede8dc;
         background-color: #ffffff;
 
         .content {
-            padding-bottom: 1210px;  
+          /*  padding-bottom: 1210px;*/  
             margin: auto;
             @include respond-to(mobile){
                 padding-bottom: 10px;
@@ -17,11 +16,7 @@ body {
         }   
 
         .footer {
-            position: absolute;
-            left: 0;
-            bottom: 0;
             width: 100%;
-            height: 1200px;
             background-color: #ffffff;
 
             @include respond-to(mobile){

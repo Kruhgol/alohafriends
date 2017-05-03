@@ -5,7 +5,7 @@
         <div class="row article" ng-repeat="article in articles">
             <div class="col-lg-2 col-md-1 col-sm-1"></div>
             <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6">
-                <a href="#/article/{{article.url}}"><img ng-src="{{article.picture}}" width="100%" alt="">
+                <a href="#/article/{{article.url}}" style="display: block;width: 100%;height: 150px; overflow: hidden;"><img ng-src="{{article.picture}}" width="100%" alt=""></a>
             </div>
             <div class="col-lg-5 col-md-6 col-sm-6 col-xs-6 article-text">
                 <a href="#/article/{{article.url}}"><h1>{{article.title}}</h1></a><br/>

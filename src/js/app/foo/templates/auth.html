@@ -2,7 +2,7 @@
 
 <div class="auth" ng-show="authVisible && (!userConfig.isAuth)">
     <div class="auth-close" ng-click="authVisible = 0">X</div>
-    <h1>Для того чтобы оставить комментарии на сайте, пожалуйста авторизуйтесь!</h1>
+    <h1>{{dictionary.forComment}}</h1>
     <div class="auth-fb" ng-click="fbAuth()" ng-hide="fbVisible || vkVisible"></div>
     <div class="auth-vk" ng-click="vkAuth()" ng-hide="fbVisible || vkVisible"></div>
     

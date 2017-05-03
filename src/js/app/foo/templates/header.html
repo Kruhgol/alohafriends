@@ -32,21 +32,20 @@
             <div class="col-lg-1 col-md-1 col-sm-1 hidden-xs menu-cell">
                 <a href="#/contacts">{{dictionary.communication}}</a>
             </div>
-            <div class="col-lg-1 col-md-1 col-sm-1 hidden-xs menu-cell text-center">
-                <div class="sprite search" style="margin-left: 70%"></div>
-                <div class="menu-list-search">
-                    <form name="search">
-                        <input type="text" placeholder="Что ищем?" ng-model="markSearch.text">
-                        <input type="button" value="search" ng-click="getSearch(markSearch)">
-                    </form>
-                </div>
+
+            <div class="col-lg-1 col-md-1 col-sm-1 hidden-xs menu-cell menu-cell-search text-center">
+                <form name="search">
+                    <input type="text" ng-model="markSearch.text">
+                    <input type="button" value="search" class="sprite search" ng-click="getSearch(markSearch)">
+                </form>
             </div>
-            <div class="col-lg-1 col-md-2 col-sm-2 hidden-xs menu-cell">
+
+            <div class="col-lg-1 col-md-2 col-sm-2 hidden-xs menu-cell text-center">
                 <a href="#"><div class="socseti sprite vk"></div></a>
                 <a href="#"><div class="socseti sprite fb"></div></a>
                 <a href="#"><div class="socseti sprite inst"></div></a>
             </div>
-            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-2 menu-cell menu-language">
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-2 menu-cell menu-language text-center">
                 <div>
                     <i id="language-flag"></i>
                 </div>
@@ -57,7 +56,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-lg-1 hidden-md col-sm-2 col-xs-1"></div>
+            <div class="col-lg-1 hidden-md hidden-sm col-xs-1"></div>
         </div>  
     </div>
 

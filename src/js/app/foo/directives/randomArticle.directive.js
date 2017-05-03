@@ -9,7 +9,6 @@ module.exports = function($templateCache, $location, languageService){
         restrict: 'EA',
 
         controller: function($scope, $http, $location, $routeParams, $sce, userConfig, requestsService, languageService){
-
             requestsService.getRandomArticles().then(function(result){
                 $scope.randomArticles = result.data;
                 for(var i=0; i<$scope.randomArticles.length; i++){

@@ -1,10 +1,12 @@
+<h1>{{dictionary.seeToo}}</h1>
 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 random-article" ng-repeat="randomArticle in randomArticles">
     <a href="#/article/{{randomArticle.url}}">
-        <img ng-src="{{randomArticle.picture}}" alt="{{randomArticle.title}}" width="100%">
-        <span>{{randomArticle.title}}</span>/<span>{{randomArticle.country}}</span><br/>
-        <span>{{randomArticle.date}}</span>   
+        <div>
+            <img ng-src="{{randomArticle.picture}}" alt="{{randomArticle.title}}" width="100%">
+        </div>
+        <span>{{randomArticle.title}}</span>/<span>{{randomArticle.country}}</span><br/> 
     </a>
 </div>
 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-    <img src="/media/images/reklama.png" alt="reclum" width="100%">
+    <img src="/media/images/reklama.jpg" alt="reclum" width="100%">
 </div>

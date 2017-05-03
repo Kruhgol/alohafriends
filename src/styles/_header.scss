@@ -57,9 +57,9 @@ header {
                 background: url('./../img/menu.png') no-repeat; 
                 background-size: 100%;
             }
-            .menu-list-search {
+/*            .menu-list-search {
                 display: none;
-            }
+            }*/
         }
 
         .menu-language {
@@ -79,7 +79,36 @@ header {
             }
         }
 
-        .menu-cell:hover .menu-list-search {
+        .menu-cell-search {
+            padding: 0;
+            position: relative;
+            input[type="text"]{
+                padding: 0 5px 0 5px;
+                width: 100%;
+                margin-top: 9px;
+                border-width: 1px;
+                border-radius: 10px;
+                border-color: $menuTextColor;
+                outline: none;
+                background-color: rgba(0,0,0,0);
+                @include respond-to(tablet){
+                    margin-top: 4px;
+                    font-size: 12px;
+                }
+            }
+            input[type="button"]{
+                position: absolute;
+                border: none;
+                top: 12px;
+                right: 2px;
+                z-index: 5;
+                @include respond-to(tablet){
+                    top: 10px;
+                }
+            }
+        }
+
+/*        .menu-cell:hover .menu-list-search {
             display: block;
             position: relative;
             z-index: 5;
@@ -101,7 +130,7 @@ header {
                 }
             }
 
-        }
+        }*/
 
         .menu-cell:hover .menu-list {
 
@@ -195,12 +224,16 @@ header {
     .titul {
         display: none;
         position: absolute;
-        top: 15%;
+        top: 10%;
         width: 100%;
         margin: auto;
 
-        animation-name: emercion;
-        animation-duration: 10s;
+        @include respond-to(mobile){
+            top: 25%;       
+        }
+
+/*        animation-name: emercion;
+        animation-duration: 10s;*/
 
         span {
             display: inline-block;
@@ -244,8 +277,8 @@ header {
         font-family: $Engine;
         font-size: 48px;
 
-        animation-name: emercion;
-        animation-duration: 10s;
+/*        animation-name: emercion;
+        animation-duration: 10s;*/
 
         @include respond-to(tablet){
             font-size: 36px;
@@ -267,9 +300,9 @@ header {
         color: $menuTextColor;
         font-family: $Engine;
         font-size: 48px;
-
+/*
         animation-name: emercion;
-        animation-duration: 10s;
+        animation-duration: 10s;*/
 
 
         @include respond-to(tablet){

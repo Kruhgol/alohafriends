@@ -30,7 +30,8 @@ module.exports = function($routeProvider){
 		templateUrl: 'contacts.html'
 	})
 	.when('/map', {
-		templateUrl: 'map.html'
+		templateUrl: 'map.html',
+		controller: 'mapCtrl'
 	})
 	.when('/design', {
 		templateUrl: 'design.html'

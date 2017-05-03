@@ -119,3 +119,13 @@ class Marker(models.Model):
     
     def __unicode__(self):
         return self.marker_title  
+
+class Map(models.Model):
+    class Meta:
+        db_table = "map"
+    map_date = models.CharField(max_length=50)
+    map_text = models.CharField(max_length=200)
+    map_text_eng = models.CharField(max_length=200)
+
+    def __unicode__(self):
+        return self.map_date  

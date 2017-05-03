@@ -1,10 +1,11 @@
 .auth {
     position: fixed;
     height: 500px;
-    width: 500px;
+    width: 510px;
     margin: auto;
-
-    background-color: #33424f;
+    border: solid 5px #000000;
+    background-color: #ffffff;
+    border-radius: 20px;
     left: 50%;
     margin-left: -250px;
     top: 50%;
@@ -15,16 +16,22 @@
     }
     @include respond-to(mobile){
         height: 300px;
-        width: 300px; 
+        width: 310px; 
         margin-left: -150px; 
         margin-top: -150px;          
     } 
 
     .auth-close {
-        font-size: 24px;
+        font-size: 26px;
+        line-height: 30px;
+        width: 40px;
+        height: 40px;
         position: absolute;
-        top: 5px;
-        right: 10px;
+        top: -5px;
+        right: -5px;
+        border: solid 5px #000000;
+        border-radius: 50%;
+        text-align: center;
         &:hover {
             cursor: pointer;
         }
@@ -41,10 +48,10 @@
         } 
     }
     .auth-fb {
-        background-image: url('./../img/fb.png');
+        background-image: url('./../img/1493184405_facebook.png');
     }
     .auth-vk {
-        background-image: url('./../img/vk.png');
+        background-image: url('./../img/1493184426_vk.png');
     }
     .auth-fb, .auth-vk {
         display: inline-block;
@@ -52,7 +59,7 @@
         font-size: 80px;
         font-family: $Engine;
         text-align: center;
-        height: 200px;
+        height: 250px;
         line-height: 200px;
         background-repeat: no-repeat;
         background-position: center;
@@ -60,7 +67,7 @@
 
         @include respond-to(mobile){
             width: 148px;
-            height: 100px;
+            height: 150px;
             line-height: 100px;
             font-size: 50px;
         }

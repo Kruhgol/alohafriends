@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from blog.models import Album, Photo, Article, Country, Mark, Video, Marker, Comment, Author
+from blog.models import Album, Photo, Article, Country, Mark, Video, Marker, Comment, Author, Map
 
 class CommentAdmin(admin.ModelAdmin):
     fields = ['comment_article', 'comment_text']
@@ -52,6 +52,8 @@ class MarkerAdmin(admin.ModelAdmin):
 class AuthorAdmin(admin.ModelAdmin):
     fields = ['article_author', 'article_author_eng', 'article_authorUrl']
 
+class MapAdmin(admin.ModelAdmin):
+    fields = ['map_date', 'map_text', 'map_text_eng']
 
 admin.site.register(Article, ArticleAdmin)
 admin.site.register(Photo, PhotoAdmin)
@@ -62,3 +64,4 @@ admin.site.register(Video, VideoAdmin)
 admin.site.register(Marker, MarkerAdmin)
 admin.site.register(Comment, CommentAdmin)
 admin.site.register(Author, AuthorAdmin)
+admin.site.register(Map, MapAdmin)

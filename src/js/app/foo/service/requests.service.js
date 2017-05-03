@@ -13,7 +13,8 @@ function Request($http, $rootScope){
         searchMark = '/searchMark/',
         mark = '/mark/',
         marks = '/marks/',
-        randomArticles = '/randomArticles/';
+        randomArticles = '/randomArticles/',
+        map = '/map/';
 
     //controller's GET requests
 
@@ -51,6 +52,10 @@ function Request($http, $rootScope){
     };
     this.getRandomArticles = function() {
         var adr = requestsUrl + randomArticles;
+        return $http.get(adr);
+    };
+    this.getMap = function(){
+        var adr = requestsUrl + map;
         return $http.get(adr);
     };
 

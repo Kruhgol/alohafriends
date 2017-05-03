@@ -62,7 +62,7 @@ module.exports = function($scope,
                 window.location.assign('#/mark/' + result.data.mark)
             }
             else{
-                alert('Извините по запросу \"' + markSearch.text + '\" ничего не найденно!')
+                //alert('Извините по запросу \"' + markSearch.text + '\" ничего не найденно!')
             }
         });
     }

@@ -26,7 +26,7 @@ span.angular-lightbox-inner > img {
   vertical-align: bottom;
   max-height: 90vh;
   /*by me*/
-  width: 100%;
+  width: 90%;
 }
 span.angular-lightbox-inner > a {
   font-family: sans-serif;
