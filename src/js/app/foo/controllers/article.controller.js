@@ -7,6 +7,7 @@ module.exports = function($scope, $http, $location, $routeParams, $sce, requests
 
     requestsService.getArticle($scope.articleId).then(function(result){
         $scope.article = result.data;
+        console.log(result.data);
         $scope.articleText = $sce.trustAsHtml($scope.article[languageService.howLanguage()].text);
         $scope.article.author = $scope.article[languageService.howLanguage()].author;
         $scope.article.title = $scope.article[languageService.howLanguage()].title;

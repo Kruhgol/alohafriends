@@ -1,4 +1,4 @@
-'use strict';
+
 
 module.exports = function($scope, 
                           $http, 
@@ -6,7 +6,8 @@ module.exports = function($scope,
                           $routeParams, 
                           userConfig, 
                           requestsService, 
-                          languageService){
+                          languageService,
+                          $window){
 
     languageService.language();
     $scope.dictionary = languageService.dictionary;
@@ -26,5 +27,9 @@ module.exports = function($scope,
         }
 
     });
+
+    $scope.toTop = function(){
+      $window.scrollTo(0, 0);
+    }
 }
 

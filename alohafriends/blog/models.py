@@ -73,6 +73,7 @@ class Article(models.Model):
     article_country = models.ForeignKey(Country, null=True)
     article_picture = models.ImageField(null=True, upload_to='images', verbose_name='photo')
     article_author = models.ForeignKey(Author, null=True)
+    article_pictureSoc = models.ImageField(null=True, upload_to='images', verbose_name='photo for Soc')
 
     def __unicode__(self):
         return self.article_title

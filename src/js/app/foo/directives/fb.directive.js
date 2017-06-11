@@ -14,14 +14,14 @@ module.exports = function($templateCache, $location){
 
         controller: 
             function($scope, $http, $location, $routeParams, $sce, userConfig){
-                $scope.$watch('name', function(){
-                    document.getElementById("vkShare").innerHTML = VK.Share.button({
-                    url: $location.absUrl(),
-                    title: $scope.name,
-                    image: 'http://' + $location.host() + $scope.picture,
-                    noparse: true
-                },{type: 'custom', text: '<img src="/media/images/vk.png" />'});
-                })
+                // $scope.$watch('name', function(){
+                //     document.getElementById("vkShare").innerHTML = VK.Share.button({
+                //     url: $location.absUrl(),
+                //     title: $scope.name,
+                //     image: 'http://' + $location.host() + $scope.picture,
+                //     noparse: true
+                // },{type: 'custom', text: '<img src="/media/images/vk.png" />'});
+                // })
                 
 
 

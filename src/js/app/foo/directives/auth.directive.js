@@ -50,13 +50,13 @@ module.exports = function($templateCache, $location){
                 window.fbAsyncInit();
             }
 
-            $scope.vkAuth = function(){
-                $scope.vkVisible = true;
-                //подключенеи виджета авторизации ВК
-                VK.Widgets.Auth("vk_auth", {width: "200px",  onAuth: function(data){
-                    $scope.socSetiUser(data.first_name, data.last_name, 'vk.com/id' + data.uid, data.photo_rec, true);
-                 }});        
-            }
+            // $scope.vkAuth = function(){
+            //     $scope.vkVisible = true;
+            //     //подключенеи виджета авторизации ВК
+            //     VK.Widgets.Auth("vk_auth", {width: "200px",  onAuth: function(data){
+            //         $scope.socSetiUser(data.first_name, data.last_name, 'vk.com/id' + data.uid, data.photo_rec, true);
+            //      }});        
+            // }
         },
 
         restrict: 'EA',

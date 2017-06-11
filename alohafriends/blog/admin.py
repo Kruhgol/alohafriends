@@ -21,7 +21,8 @@ class ArticleAdmin(admin.ModelAdmin):
                 'article_date', 
                 'article_album', 
                 'article_country', 
-                'article_picture', 
+                'article_picture',
+                'article_pictureSoc', 
                 'article_author'
             ]
     inlines = [CommentInline]

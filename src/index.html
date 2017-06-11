@@ -8,8 +8,8 @@
 	<link href="{% static 'static/css/bootstrap.css' %}" rel="stylesheet">
 	<link rel="stylesheet" href="{% static 'static/css/style.css' %}">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type="text/javascript" src="https://vk.com/js/api/share.js?93" charset="windows-1251"></script>
-    <script src="https://vk.com/js/api/openapi.js?139" type="text/javascript"></script>
+    <!-- <script type="text/javascript" src="https://vk.com/js/api/share.js?93" charset="windows-1251"></script> -->
+    <!-- <script src="https://vk.com/js/api/openapi.js?139" type="text/javascript"></script> -->
     <!-- <script type="text/javascript" src="{% static 'static/js/jquery.js' %}"></script> -->
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <!-- angular-lightbox -->
@@ -20,7 +20,7 @@
 </head>
 <body ng-controller="appCtrl">
 {% csrf_token %}
-<script type="text/javascript">  VK.init({apiId: 5865416});</script>
+<!-- <script type="text/javascript">  VK.init({apiId: 5865416});</script> -->
 <div id="fb-root"></div>
 
     <div class="wrapper">
@@ -36,6 +36,6 @@
 	<script src="{% static 'static/js/build.js' %}"></script>
     <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAfyGgClqYcu0keXcWbVwont0hxoe4DcFA"></script>
 
-
+    <div class="click-up" ng-click="toTop()">^</div>
 </body>
 </html>

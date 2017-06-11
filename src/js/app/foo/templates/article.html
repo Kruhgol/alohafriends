@@ -8,7 +8,7 @@
                 <!-- <h1>{{article.data}}</h1> -->
                 <div class="text" ng-bind-html="articleText"></div>
                 <div class="author">
-                    <a href="#/marks/{{article.authorUrl}}">{{article.author}}</a>
+                    <a href="#/author/{{article.authorUrl}}">{{article.author}}</a>
                 </div>
             </div>
             <div class="col-lg-2 col-md-1"></div>
@@ -38,8 +38,8 @@
 
 
     <div class="soc-seti-center">
-        <div class="vk-center" fb-dir id="vkShare" picture="{{article.picture}}" name="{{article.title}}" description="{{article.anatation}}"></div>
-        <div class="fb-center" fb-dir id="fbShare" picture="{{article.picture}}" name="{{article.title}}" description="{{article.anatation}}">
+        <div class="vk-center" fb-dir id="vkShare" picture="{{article.pictureSoc}}" name="{{article.title}}" description="{{article.anatation}}"></div>
+        <div class="fb-center" fb-dir id="fbShare" picture="{{article.pictureSoc}}" name="{{article.title}}" description="{{article.anatation}}">
             <img src="/media/images/fb.png" alt="">
         </div>
     </div>

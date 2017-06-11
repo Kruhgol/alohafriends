@@ -203,6 +203,7 @@ def article(request,article):
     r['ru']['anatation'] = a.article_anatation
     r['eng']['anatation'] = a.article_anatation_eng
     r['picture'] = a.article_picture.url
+    r['pictureSoc'] = a.article_pictureSoc.url
     r['data'] = json.dumps(a.article_date.strftime("%Y-%m-%d %H:%M:%S"))
     r['ru']['author'] = author.article_author
     r['eng']['author'] = author.article_author_eng
