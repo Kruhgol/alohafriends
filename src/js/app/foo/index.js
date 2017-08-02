@@ -2,24 +2,14 @@
 
 module.exports = angular.module('AlohaFriends.foo',[])
 	.config(require('./routes.js'))
-    .directive('headerDir', ['$templateCache', '$location', 'languageService', require('./directives/header.directive')])
-    .directive('commentsDir', ['$templateCache', '$location', require('./directives/comments.directive')])
-    .directive('markDir', ['$templateCache', '$location', require('./directives/mark.directive')])
-    .directive('authDir', ['$templateCache', '$location', require('./directives/auth.directive')])
-    .directive('fbDir', ['$templateCache', '$location', require('./directives/fb.directive')])
-    .directive('randomarticleDir', ['$templateCache', '$location', require('./directives/randomArticle.directive')])    
-    .directive('lightbox', require('./directives/lightbox.directive'))
-    .directive('footerDir', require('./directives/footer.directive'))
-    .controller('homeCtrl', ['$http', '$location', '$routeParams', 'languageService', require('./controllers/home.controller')])
-    .controller('headerCtrl', require('./controllers/header.controller'))
-    .controller('countryCtrl', require('./controllers/country.controller'))
-    .controller('articleCtrl', require('./controllers/article.controller'))
+    
     .controller('appCtrl', require('./controllers/app.controller'))
-    .controller('markCtrl', require('./controllers/mark.controller'))
-    .controller('authorCtrl', require('./controllers/author.controller'))
-    .controller('relinkCtrl', require('./controllers/relink.controller'))
-    .controller('mapCtrl', require('./controllers/map.controller'))
-    .factory('requestsService', require('./service/requests.service'))
+
     .value('userConfig', require('./service/user.service'))
     .value('languageService', require('./service/language.service'))
     .config(['$httpProvider', require('./service/configHttpProvider')])
+
+
+
+
+// .directive('headerDir', ['$templateCache', '$location', 'languageService', require('./directives/header.directive')])

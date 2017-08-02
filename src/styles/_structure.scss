@@ -1,67 +1,7 @@
 body {
-    
-    background-color: #ffffff;
     .wrapper {
-        position: relative;
-        /*min-height: 100%;*/
-        background-color: #ede8dc;
-        background-color: #ffffff;
-
-        .content {
-          /*  padding-bottom: 1210px;*/  
-            margin: auto;
-            @include respond-to(mobile){
-                padding-bottom: 10px;
-            }
-        }   
-
-        .footer {
-            width: 100%;
-            background-color: #ffffff;
-
-            @include respond-to(mobile){
-                display: none;
-            }
-        }
-        .footer-mobile {
-            display: none;
-            @include respond-to(mobile){
-                display: block;
-            }            
-        }
+        width: 960px;
+        background-color: red;
+        height: 1000px;
     }
-}
-
-.clear-both {
-    clear: both;
-}
-
-.design {
-    width: 100%;
-    height: 300px;
-    line-height: 300px;
-    margin-top: 100px;
-
-    h1 {
-        font-family: $Engine;
-        font-size: 60px;
-        text-align: center;
-        vertical-align: middle;  
-    }
-}
-
-.click-up {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #949ca1;
-    opacity: 0.7;
-    color: #ffffff;
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    font-size: 36px;
-    text-align: center;
-    border-radius: 50%;
-
 }
