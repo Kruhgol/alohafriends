@@ -1,6 +1,6 @@
 $mobile : 767px;
 $tablet : 991px;
-$medium : 1199px;
+$medium : 1200px;
 
 @mixin respond-to($media) {
     @if $media == mobile {
@@ -13,3 +13,23 @@ $medium : 1199px;
         @media only screen and (min-width: $tablet + 1) and (max-width: $medium) {@content;}
     }
 } 
+
+$mob_width: 767px;
+$screen_width: 1200px;
+$pad_850: 850px;
+
+@mixin respond-to($media) {
+    @if $media == mob {
+        @media only screen and (max-width: $mob_width) {@content;}
+    }
+    @else if $media == screen {
+        @media only screen and (min-width: $mob_width + 1) and (max-width: $screen_width) {@content;}
+    }
+} 
+
+/*@include respond-to(mob){
+
+} 
+@include respond-to(screen){
+
+} */

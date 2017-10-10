@@ -1,0 +1,585 @@
+.main {
+    width:100%;
+    max-width: 1200px;
+    position: relative;
+    margin:auto;
+    height: auto;
+}
+
+.header_average {
+    width: 100%;
+    position: relative;
+}
+
+.header_average__content{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:100%;
+    padding: 0 30px 0 30px;
+
+    .header_average__title{
+        font-size: 60px;
+        padding-top: 80px;
+        text-align: center;
+        letter-spacing:10px;
+        color: #33424f;
+        font-weight: bold;        
+    }
+
+    .header_average__describe{
+        font-size: 32px;
+        text-align: center;   
+        color: #33424f;   
+    }
+
+    .header_average__table{
+        width: 320px;
+        height: 80px;
+        border: solid 2px #33424f;
+        padding-top: 5px;
+        float: right;
+        margin-top: 100px; 
+        p{
+            font-size: 16px;
+            font-weight: bold;
+            color: #33424f;
+            text-align: center;
+        }
+    }    
+}
+
+
+.header_big {
+    width: 100%;
+    position: absolute;
+    top:0;
+    left: 0;
+    z-index: 2;
+    .header_big__wrapper {
+        position: relative;
+        width: 1200px;
+        padding: 0 40px 0 40px;
+        margin: auto;
+    }
+}
+
+.header_big__title {
+    font-size: 5vw;
+    padding-top: 100px;
+    text-align: center;
+    letter-spacing:10px;
+    color: #33424f;
+    font-weight: bold;
+}
+
+.header_big__describe{
+    font-size: 32px;
+    text-align: center;   
+    color: #33424f;    
+}
+
+.header_big__table{
+    width: 320px;
+    height: 80px;
+    border: solid 2px #33424f;
+    padding-top: 5px;
+    float: right;
+    margin-top: 150px; 
+    p{
+        font-size: 16px;
+        font-weight: bold;
+        color: #33424f;
+        text-align: center;
+    }
+}
+
+.main_content {
+    width: 1200px;
+    margin: auto;
+    margin-top: 60px;
+    @include respond-to(screen){
+        width: 92vw;
+    }
+    .trip_with_us {
+        width: 1120px;
+        margin: auto;
+        border-bottom: solid 3px $basic_color;
+        @include respond-to(screen){
+            width: 92vw;
+        }
+        p{
+            font-size: 32px;
+            color: $basic_color;
+            font-weight: bold;
+            @include respond-to(screen){
+                font-size: 3vw;
+            } 
+        }
+
+    }
+
+    .main_content__countries{
+        width: 1120px;
+        margin: auto;
+        margin-top: 30px;
+        @include respond-to(screen){
+            width: 92vw;
+        }
+
+        .country__text {
+            float:left;
+            position: relative;
+            h1 {
+                text-align: center;
+                color: $basic_color;
+                letter-spacing: 5px;
+                font-weight: 600;
+            }
+            a{
+                text-decoration: none;
+                position: absolute;
+                font-weight: 600;
+                color: $basic_color;
+            }
+        }
+        .country__img_name{
+            display: table;
+            position: absolute;
+            z-index:2;
+            top:0;
+            left:0;
+            div{
+                display: table-cell;
+                text-align: justify;
+                vertical-align: middle;
+                ul{
+                    display: flex;
+                    text-align: center;
+                    margin: 0;
+                    list-style: none;
+                    justify-content: space-between;
+                    li{
+                        color: #fff;
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+
+        .country__above{
+            display: none;
+            position: absolute;
+            z-index:3;
+            top:0;
+            left:0;
+            background-color: rgba(146,146,146,0.5);
+            
+            a{
+                width: 100%;
+                height: 100%;
+                display: block;
+            }
+        }
+
+        .country__img {
+            overflow: hidden;
+            float: left;
+            position: relative;         
+        }
+
+        .country_small {
+            float:left;
+            width: 500px;
+            height: 250px;
+            background-color: #f5f5f6;
+            position: relative;
+            @include respond-to(screen){
+                width: 42vw;
+                height: 21vw;
+            } 
+            &:hover  .country__above{
+                    display:block;
+            }
+            .country__above{
+                width: 500px;
+                height: 250px;
+                @include respond-to(screen){
+                    width: 42vw;
+                    height: 21vw;
+                }
+            }
+            .country__img {
+                height: 250px;
+                width: 250px;
+                @include respond-to(screen){
+                    width: 21vw;
+                    height: 21vw;
+                } 
+            }
+            .country__img_name{
+                width: 250px;
+                height: 250px;
+                @include respond-to(screen){
+                    width: 21vw;
+                    height: 21vw;
+                }
+                div{
+                    height: 250px;
+                    width:250px;
+                    @include respond-to(screen){
+                        width: 21vw;
+                        height: 21vw;
+                    }
+                    ul{
+                        padding: 0 20px 0 20px;
+                        @include respond-to(screen){
+                            padding: 0 1vw 0 1vw;
+                        }
+                        li{
+                            font-size: 32px;
+                            @include respond-to(screen){
+                                font-size: 2vw;
+                            }
+                        }
+                    }
+                }
+            }
+            .country__text {
+                height: 250px;
+                width: 250px;
+                padding: 0 20px 0 20px;
+                @include respond-to(screen){
+                    width: 21vw;
+                    height: 21vw;
+                    padding: 0 1.5vw 0 1.5vw;
+                } 
+                h1 {
+                    font-size: 24px;
+                    margin: 25px 0 15px 0;
+                    @include respond-to(screen){
+                        margin: 2vw 0 1vw 0;
+                        font-size: 2vw;
+                    } 
+                }
+                a{
+                    bottom: 30px;
+                    left: 20px;
+                    @include respond-to(screen){
+                        bottom: 1.5vw;
+                        left: 1.5vw;
+                    } 
+                }
+            }
+            
+
+        }
+
+        .country_average {
+            float:left;
+            width: 620px;
+            height: 250px;
+            position: relative;
+            @include respond-to(screen){
+                width: 50vw;
+                height: 21vw;
+            } 
+            &:hover  .country__above{
+                display:block;
+            }
+            .country__above{
+                width: 620px;
+                height: 250px;
+                @include respond-to(screen){
+                    width: 50vw;
+                    height: 21vw;
+                }
+            }
+            .country__img {
+                height: 250px;
+                width: 370px;
+                @include respond-to(screen){
+                    width: 29vw;
+                    height: 21vw;
+                } 
+            }
+            .country__img_name{
+                width: 370px;
+                height: 250px;
+                @include respond-to(screen){
+                    width: 29vw;
+                    height: 21vw;
+                }
+                div{
+                    height: 250px;
+                    width:370px;
+                    @include respond-to(screen){
+                        width: 29vw;
+                        height: 21vw;
+                    }
+                    ul{
+                        padding: 0 20px 0 20px;
+                        @include respond-to(screen){
+                            padding: 0 1vw 0 1vw;
+                        }
+                        li{
+                            font-size: 32px;
+                            @include respond-to(screen){
+                                font-size: 2vw;
+                            }
+                        }
+                    }
+                }
+            }
+            .country__text {
+                height: 250px;
+                width: 250px;
+                padding: 0 20px 0 20px;
+                @include respond-to(screen){
+                    width: 21vw;
+                    height: 21vw;
+                    padding: 0 1.5vw 0 1.5vw;
+                } 
+                h1 {
+                    font-size: 24px;
+                    margin: 25px 0 15px 0;
+                    @include respond-to(screen){
+                        margin: 2vw 0 1vw 0;
+                        font-size: 2vw;
+                    } 
+                }
+                a{
+                    bottom: 30px;
+                    left: 20px;
+                    @include respond-to(screen){
+                        bottom: 1.5vw;
+                        left: 1.5vw;
+                    } 
+                }
+            }
+
+        }
+
+        .country_big {
+            float:left;
+            width: 1120px;
+            height: 250px;
+            position: relative;
+            @include respond-to(screen){
+                width: 92vw;
+                height: 21vw;
+            }
+            &:hover  .country__above{
+                    display:block;
+            }
+            .country__above{
+                width: 1120px;
+                height: 250px;
+                @include respond-to(screen){
+                    width: 92vw;
+                    height: 21vw;
+                }
+            }
+            .country__img {
+                height: 250px;
+                width: 620px;
+                @include respond-to(screen){
+                    width: 50vw;
+                    height: 21vw;
+                } 
+            }
+            .country__img_min {
+                height: 250px;
+                width: 250px;
+                float: left;
+                overflow: hidden;
+                position: relative;
+                @include respond-to(screen){
+                    width: 18vw;
+                    height: 21vw;
+                } 
+            }
+            .country__img_name{
+                width: 540x;
+                height: 250px;
+                @include respond-to(screen){
+                    width: 53vw;
+                    height: 21vw;
+                }
+                div{
+                    height: 250px;
+                    width:540px;
+                    @include respond-to(screen){
+                        width: 53vw;
+                        height: 21vw;
+                    }
+                    ul{
+                        padding: 0 20px 0 20px;
+                        @include respond-to(screen){
+                            padding: 0 1vw 0 1vw;
+                        }
+                        li{
+                            font-size: 32px;
+                            @include respond-to(screen){
+                                font-size: 2vw;
+                            }
+                        }
+                    }
+                }
+            }
+            .country__text {
+                height: 250px;
+                width: 250px;
+                padding: 0 20px 0 20px;
+                @include respond-to(screen){
+                    width: 21vw;
+                    height: 21vw;
+                    padding: 0 1.5vw 0 1.5vw;
+                } 
+                h1 {
+                    font-size: 24px;
+                    margin: 25px 0 15px 0;
+                    @include respond-to(screen){
+                        margin: 2vw 0 1vw 0;
+                        font-size: 2vw;
+                    } 
+                }
+                a{
+                    bottom: 30px;
+                    left: 20px;
+                    @include respond-to(screen){
+                        bottom: 1.5vw;
+                        left: 1.5vw;
+                    } 
+                }
+            } 
+
+        }
+    }
+
+    .have_gone {
+        width: 1120px;
+        height: 150px;
+        box-sizing: border-box;
+        margin: auto;
+        margin-top: 100px;
+        margin-bottom: 100px;
+        border: solid 3px $basic_color;
+        display: table;
+        padding: 0 157px 0 157px;
+        @include respond-to(screen){
+            width: 92vw;
+            height: 13vw;
+            padding: 0 13vw 0 13vw;
+        }
+        .have_gone__cell{
+            display: table-cell;
+            height: 150px;
+            vertical-align: middle;
+            text-align: center;
+            @include respond-to(screen){
+                height: 13vw;
+            }
+            p{
+                text-align: center;
+                &:first-child{
+                    font-size: 24px;
+                    font-weight: 600;
+                    color: $basic_color;
+                    @include respond-to(screen){
+                        font-size: 2vw;
+                    }
+                }
+            }
+            div{
+                width: 50px;
+                height: 3px;
+                background-color: $basic_color;
+                margin:auto;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                @include respond-to(screen){
+                    width: 5vw;
+                    margin-top: 1vw;
+                    margin-bottom: 1vw;
+                }
+            }
+
+        }
+    }
+
+    .welcome {
+        width: 220px;
+        margin: auto;
+        height: 60px;
+        background-color: $basic_color;
+        color: $wc;
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 60px;
+        text-align: center;
+        letter-spacing: 5px;
+        border-radius: 10px;
+        margin-bottom: 50px;
+
+        @include respond-to(screen){
+            width: 20vw;
+            height: 5vw;
+            line-height: 5vw;
+            font-size: 2vw;
+            letter-spacing: 0.5vw;
+            border-radius: 1vw;
+
+        }
+    }
+
+    .socsetilinks {
+        width: 1120px;
+        margin: auto;
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-between;
+
+        @include respond-to(screen){
+            width: 92vw;
+        }
+        .link{
+            width: 245px;
+            height: 360px;
+            background-color: #e7e7e8;
+            float: left;
+            @include respond-to(screen){
+            width: 22vw;
+            }
+
+            h1{
+                font-size: 36px;
+                @include respond-to(screen){
+                    width: 3.1vw;
+                }
+
+            }
+
+            .marks {
+                a{
+                    font-size: 24px;
+                    margin-right: 10px;
+                    @include respond-to(screen){
+                        width: 2.1vw;
+                    }
+                    &:hover{
+                        color: $basic_color;
+                        text-decoration: none;
+                    }
+
+                }
+            }
+        }
+    }
+
+
+}
+
+.both {
+    clear: both;
+}

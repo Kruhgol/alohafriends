@@ -3,7 +3,7 @@
 module.exports = function($routeProvider){
 	$routeProvider
 	.when('/',{
-		templateUrl: "home.html"
+		templateUrl: "main.html"
 	})
 	.otherwise({
 		redirectTo: "/"

@@ -4,3 +4,4 @@ bower_components
 alohafriends/static
 alohafriends/templates
 alohafriends/**/*.pyc
+**/*.zip

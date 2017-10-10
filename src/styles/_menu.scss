@@ -1,0 +1,145 @@
+#primary_nav_wrap
+{   
+    position: absolute;
+    left:0;
+    top:0;
+    z-index: 2;
+    margin-left: 40px;
+}
+.nav_flag {
+    width: 50px;
+    height: 25px;
+    margin-left: 20px;
+    &:hover{
+        background-color:#33424f;
+    }
+    i {
+        margin-top: 10px;
+    }
+}
+#primary_nav_wrap_right
+{
+    position: absolute;
+    right:0;
+    top:0;
+    z-index: 2;
+    margin-right: 40px;
+
+}
+.i_top {
+    display:table-cell;
+    vertical-align: middle;
+    &:hover{
+        background-color:#33424f;
+    }
+}
+#primary_nav_wrap ul,
+#primary_nav_wrap_right ul
+{
+    list-style:none;
+    position:relative;
+    float:left;
+    margin:0;
+    padding:0;  
+}
+
+#primary_nav_wrap ul a,
+#primary_nav_wrap_right ul a
+{
+    display:block;
+    color:#33424f;
+    text-decoration:none;
+    font-weight:700;
+    font-size:12px;
+    line-height:32px;
+    padding:0 10px;
+    font-family:"HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif
+}
+
+#primary_nav_wrap ul li,
+#primary_nav_wrap_right ul li
+{
+    position:relative;
+    float:left;
+    margin:0;
+    padding:0;
+    
+}
+
+#primary_nav_wrap ul li.current-menu-item,
+#primary_nav_wrap_right ul li.current-menu-item
+{
+    
+}
+
+#primary_nav_wrap ul li:hover
+{
+    background-color:#33424f;
+    a {
+        color:#ffffff;
+    }
+}
+
+#primary_nav_wrap ul ul,
+#primary_nav_wrap_right ul ul
+{
+    display:none;
+    position:absolute;
+    top:100%;
+    left:0;
+    background:rgba(91,102,112,0.8);
+    padding:0
+
+}
+.rgba0_8 {
+    background:rgba(91,102,112,0.8);
+}
+#primary_nav_wrap ul ul li,
+#primary_nav_wrap_right ul ul li
+{
+    float:none;
+    width:200px;
+}
+
+#primary_nav_wrap ul ul a,
+#primary_nav_wrap_right ul ul a
+{
+    line-height:120%;
+    padding:10px 15px
+}
+
+#primary_nav_wrap ul ul ul,
+#primary_nav_wrap_right ul ul ul
+{
+    top:0;
+    left:100%
+}
+
+#primary_nav_wrap ul li:hover > ul,
+#primary_nav_wrap_right ul li:hover > ul
+{
+    display:block
+}
+
+.li-ss {
+    width: 20px;
+    padding: 0;
+    a {
+        padding: 0px !important;
+        .ss{
+            margin: 0px 0 0px 0;
+            width: 23px;
+            height: 20px;
+            background: url('./../img/sprite_top.png') no-repeat; 
+        }
+        .ss-fb{
+            background-position: -20px;
+        }
+        .ss-inst{
+            background-position: -40px;
+        }
+        .ss-you{
+            background-position: -62px;
+        }
+    }
+}
